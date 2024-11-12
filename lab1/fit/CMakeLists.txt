@@ -11,10 +11,6 @@ set(CMAKE_CXX_EXTENSIONS ON)
 # abilita warning
 string(APPEND CMAKE_CXX_FLAGS " -Wall -Wextra")
 
-# abilita l'address sanitizer e l'undefined-behaviour sanitizer in debug mode
-string(APPEND CMAKE_CXX_FLAGS_DEBUG " -fsanitize=address,undefined -fno-omit-frame-pointer")
-string(APPEND CMAKE_EXE_LINKER_FLAGS_DEBUG " -fsanitize=address,undefined -fno-omit-frame-pointer")
-
 find_package(ROOT COMPONENTS CONFIG REQUIRED)
 
 add_executable(fit_calibrazione fit_calibrazione.cpp) 
