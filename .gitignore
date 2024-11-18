@@ -2,3 +2,6 @@
 *.vscode
 *build
 *main.pdf
+*.idea
+*out
+*auxil
