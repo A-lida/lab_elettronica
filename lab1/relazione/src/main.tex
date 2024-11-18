@@ -1,0 +1,28 @@
+%! Author = paolo
+%! Date = 18/11/2024
+
+%! Per compilare usare: latexmk -file-line-error -interaction=nonstopmode -synctex=1 -output-directory=out -lualatex
+
+% Preamble
+\documentclass[11pt]{article}
+
+%$THEOS
+
+% Pacchetti per cose che non sono simboli
+\usepackage{graphicx} % per mettere i prefissi alle path delle immagini nei subfiles
+
+% Paccheti per simboli
+\usepackage{amsmath}
+
+% Pacchetto per includere altri file (da includere per ultimo)
+\usepackage{subfiles}
+
+% Document
+\begin{document}
+
+\LaTeX
+
+% esempio di come includere un file
+\subfile{sections/example.tex}
+
+\end{document}
