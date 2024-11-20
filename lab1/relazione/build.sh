@@ -1,8 +1,8 @@
+#! /bin/bash
+
 # creo la directory dove copio i file con le variabili sostituite
 rm -rf build
 mkdir -p build
-
-cp -r src/* out
 
 all_files=$(find src -type f)
 all_dirs=$(find src -type d)
