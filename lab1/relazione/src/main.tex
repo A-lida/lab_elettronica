@@ -1,8 +1,6 @@
 %! Author = paolo
 %! Date = 18/11/2024
 
-%! Per compilare usare: latexmk -file-line-error -interaction=nonstopmode -synctex=1 -output-directory=out -lualatex
-
 % Preamble
 \documentclass[11pt]{article}
 
@@ -13,6 +11,10 @@
 % Paccheti per simboli
 \usepackage{amsmath}
 
+\usepackage{listings}
+
+
+
 % Pacchetto per includere altri file (da includere per ultimo)
 \usepackage{subfiles}
 
@@ -21,7 +23,19 @@
 
 \LaTeX
 
+\title{\textbf{Misura della curva caratteristica di un semiconduttore}}
+\author{Castagnoli Alida, Forni Paolo}
+\date{8 novembre 2024}
+%DA AGGIUNGERE IL TURNO (CREDO 2) E IL NUMERO DEL TAVOLO (NO IDEA) !!!!!!!!!!!!!!!!!!!!!!!
+\maketitle
+
+\begin{abstract}
+    L'esperimento ha la finalità di misurare la curva caratteristica I-V di due diodi a semiconduttore, al silicio (Si) e al germanio (Ge). Successivamente, mediante due fit distinti, si vuole stimare la corrente inversa $I_{0}$ e il prodotto del fattore di idealità con l'equivalente in Volt della temperatura $eta V_{T}$.  
+\end{abstract}
 % esempio di come includere un file
 \subfile{@SRC@/sections/example.tex}
+\subfile{@SRC@/sections/introduzione.tex}
+
+
 
 \end{document}
