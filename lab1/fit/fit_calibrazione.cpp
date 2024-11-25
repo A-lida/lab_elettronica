@@ -14,25 +14,25 @@ void setStyle() {
   gStyle->SetOptTitle(0);
 }
 
-// void cutifier(TVirtualPad* pad){
-// gPad->Update(); // Aggiorna il canvas per garantire che gli oggetti siano stati creati
+void cutifier(TVirtualPad* pad){
+gPad->Update(); // Aggiorna il canvas per garantire che gli oggetti siano stati creati
 
-// TPaveStats *stats = (TPaveStats*)pad->GetPrimitive("stats");
-// if (stats) {
-//     stats->SetX1NDC(0.7); // Coordinata X (angolo in basso a sinistra)
-//     stats->SetY1NDC(0.7); // Coordinata Y (angolo in basso a sinistra)
-//     stats->SetX2NDC(0.9); // Coordinata X (angolo in alto a destra)
-//     stats->SetY2NDC(0.9); // Coordinata Y (angolo in alto a destra)
-// }
-// gPad->Modified();
-// gPad->Update();
-// }
+TPaveStats *stats = (TPaveStats*)pad->GetPrimitive("stats");
+if (stats) {
+    stats->SetX1NDC(0.7); // Coordinata X (angolo in basso a sinistra)
+    stats->SetY1NDC(0.7); // Coordinata Y (angolo in basso a sinistra)
+    stats->SetX2NDC(0.9); // Coordinata X (angolo in alto a destra)
+    stats->SetY2NDC(0.9); // Coordinata Y (angolo in alto a destra)
+}
+gPad->Modified();
+gPad->Update();
+}
 
 int main() {
   setStyle();
 
-  TCanvas c{"", "", 1920, 1080};
-  // c.Divide(2);
+  TCanvas c{"", "", 1080, 1080};
+  c.Divide(1);
   TGraphErrors graph("../fit/calibrazione.csv");
   graph.SetTitle("Calibrazione multimetro-oscilloscopio;Multimetro "
                  "(mV);Oscilloscopio (mV)");
@@ -42,13 +42,14 @@ int main() {
   retta.SetLineColor(kGreen);
   retta.SetParNames("Slope", "Offset");
 
-  // cutifier(c.GetPad(1));
+  cutifier(c.GetPad(1));
   graph.SetMarkerStyle(1);
   graph.SetMarkerSize(1);
   graph.Fit(&retta);
 
-  // c.cd(1);
+  c.cd(1);
 
   graph.Draw("AP*");
+  c.Draw();
   c.SaveAs("calibrazione.root");
 }
