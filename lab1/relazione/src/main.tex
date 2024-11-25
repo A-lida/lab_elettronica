@@ -8,6 +8,7 @@
 \usepackage{graphicx} % per mettere i prefissi alle path delle immagini nei subfiles
 \usepackage{circuitikz}
 \usepackage{caption}
+\usepackage[margin=2cm]{geometry}
 
 % Paccheti per simboli
 \usepackage{amsmath}
@@ -31,7 +32,7 @@
 \maketitle
 
 \begin{abstract}
-    L'esperimento ha la finalità di misurare la curva caratteristica I-V di due diodi a semiconduttore, al silicio (Si) e al germanio (Ge). 
+    L'esperimento ha la finalità di misurare la curva caratteristica \mbox{I-V} di due diodi a semiconduttore, al silicio (Si) e al germanio (Ge). 
     Successivamente, mediante due fit distinti, si vuole stimare la corrente inversa $I_{0}$ e il prodotto del fattore di idealità con l'equivalente in Volt della temperatura $\eta V_{T}$.  
     Si riportano i valori attesi, con le relative incertezze associate, rispettivamente per il diodo al silicio e al germanio:
 
@@ -51,6 +52,8 @@
 % esempio di come includere un file
 \subfile{@SRC@/sections/example.tex}
 \subfile{@SRC@/sections/introduzione.tex}
+\subfile{@SRC@/sections/acquisizione.tex}
+
 
 
 
