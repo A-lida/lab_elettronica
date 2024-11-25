@@ -9,6 +9,8 @@
 #include <TPad.h>
 #include <TVirtualPad.h>
 #include <cstring>
+#include <iostream>
+
 
 void setStyle() {
   //   gROOT->SetStyle("Plain");
@@ -45,7 +47,7 @@ void create_graphs(const char *source_file, const char *title, const char* outpu
 
   TF1 exp("esponenziale", "[0]*exp(x/[1])");
   exp.SetParameters(1E-6, 350. / 6);
-  exp.SetParNames("I_{0}", "#eta V_{D}");
+  exp.SetParNames("I_{0}", "#eta V_{T}");
   exp.SetLineColor(kOrange);
 
   graph.SetMarkerSize(1);
@@ -71,7 +73,7 @@ void create_graphs(const char *source_file, const char *title, const char* outpu
 
   TF1 retta("caratteristica", "[0]+ x/ [1]");
   retta.SetParameters(-3, 1. / 50);
-  retta.SetParNames("ln(I_{0})", "#eta V_{D}");
+  retta.SetParNames("ln(I_{0})", "#eta V_{T}");
   retta.SetLineColor(kBlue);
 
   graph_log.SetTitle(title);
