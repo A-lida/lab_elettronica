@@ -7,19 +7,26 @@
 % Pacchetti per cose che non sono simboli
 \usepackage{graphicx} % per mettere i prefissi alle path delle immagini nei subfiles
 \usepackage{circuitikz}
-\usepackage{svg}
 \usepackage{caption}
 \usepackage[margin=2cm]{geometry}
+
+\usepackage{pdftexcmds} % sbatti per lualatex
+\makeatletter
+\let\pdfstrcmp\pdf@strcmp
+\let\pdffilemoddate\pdf@filemoddate
+\makeatother
+\usepackage{svg}
 
 % Paccheti per simboli
 \usepackage{amsmath}
 
 \usepackage{listings}
 
-
-
 % Pacchetto per includere altri file (da includere per ultimo)
 \usepackage{subfiles}
+
+\graphicspath{@IMAGES@}
+\svgpath{{@IMAGES@}}
 
 % Document
 \begin{document}
