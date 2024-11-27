@@ -21,12 +21,14 @@ for source_path in $all_files; do
 
   # Define the environment variables for substitution
   PROJECT_ROOT="$(pwd)"
-  SRC="${PROJECT_ROOT}/src"
+  SRC="${PROJECT_ROOT}/build"
+  MAIN="${SRC}/main.tex"
   IMAGES="${PROJECT_ROOT}/images/"
 
   # Perform substitution for @VARNAME@ syntax
   sed -e "s|@PROJECT_ROOT@|${PROJECT_ROOT}|g" \
       -e "s|@SRC@|${SRC}|g" \
+      -e "s|@MAIN@|${MAIN}|g" \
       -e "s|@IMAGES@|${IMAGES}|g" \
       < "${source_path}" > "${dest_path}"
 done

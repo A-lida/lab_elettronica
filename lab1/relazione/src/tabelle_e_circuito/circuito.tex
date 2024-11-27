@@ -1,0 +1,24 @@
+\documentclass[@MAIN@]{subfiles}
+
+\begin{document}
+\begin{minipage}{\textwidth}
+  \centering
+  \begin{circuitikz} \draw
+    (2,2) to[american potentiometer]
+      (0,2) to[battery1]
+      (0,0) 
+    (2,2) to[full diode] 
+      (4,2) to[ammeter]
+      (4,0) --
+      (0,0)
+    (2,2) --
+      (2,3) to[voltmeter]
+      (4,3) --
+      (4,2)
+      (0,0) node[ground] {}
+    ;
+  \end{circuitikz}
+  \captionof{figure}{Schema del circuito realizzato per l'acquisizione dei dati}
+  \label{fig:circuito}
+\end{minipage}
+\end{document}
