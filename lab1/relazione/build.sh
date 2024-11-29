@@ -21,12 +21,14 @@ for source_path in $all_files; do
 
   # Define the environment variables for substitution
   PROJECT_ROOT="$(pwd)"
-  SRC="${PROJECT_ROOT}/src"
-  IMAGES="${PROJECT_ROOT}/images"
+  SRC="${PROJECT_ROOT}/build"
+  MAIN="${SRC}/main.tex"
+  IMAGES="${PROJECT_ROOT}/images/"
 
   # Perform substitution for @VARNAME@ syntax
   sed -e "s|@PROJECT_ROOT@|${PROJECT_ROOT}|g" \
       -e "s|@SRC@|${SRC}|g" \
+      -e "s|@MAIN@|${MAIN}|g" \
       -e "s|@IMAGES@|${IMAGES}|g" \
       < "${source_path}" > "${dest_path}"
 done
@@ -51,9 +53,9 @@ if [ "$1" ]; then
   mkdir -p "$output_dir"
 
   echo "Building PDF: ${dest_file} -> ${output_pdf}"
-  latexmk -file-line-error -interaction=nonstopmode -synctex=1 -output-directory=$(dirname "$output_pdf") -lualatex "$dest_file"
+  latexmk -file-line-error -interaction=nonstopmode -shell-escape -synctex=1 -output-directory=$(dirname "$output_pdf") -lualatex "$dest_file"
 else
   # Compile the main LaTeX document
   echo "Building PDF: build/main.tex -> out/main.pdf"
-  latexmk -file-line-error -interaction=nonstopmode -synctex=1 -output-directory=out -lualatex build/main.tex
+  latexmk -file-line-error -interaction=nonstopmode -shell-escape -synctex=1 -output-directory=out -lualatex build/main.tex
 fi

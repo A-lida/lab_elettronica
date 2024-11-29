@@ -46,7 +46,7 @@ void create_graphs(const char *source_file, const char *title, const char* outpu
   c.cd(1);
 
   TF1 exp("esponenziale", "[0]*exp(x/[1])");
-  exp.SetParameters(1E-6, 350. / 6);
+  exp.SetParameters(1E-6, 355. / 6);
   exp.SetParNames("I_{0}", "#eta V_{T}");
   exp.SetLineColor(kOrange);
 

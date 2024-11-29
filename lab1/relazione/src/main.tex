@@ -9,21 +9,26 @@
 \usepackage{circuitikz}
 \usepackage{caption}
 \usepackage[margin=2cm]{geometry}
+\usepackage{microtype} % Sinceramente non ho capito a cosa serva ma dicono sia magico
 
 % Paccheti per simboli
 \usepackage{amsmath}
 
 \usepackage{listings}
 
-
-
 % Pacchetto per includere altri file (da includere per ultimo)
 \usepackage{subfiles}
+
+\graphicspath{{@IMAGES@}}
+
+% Parliamo in italiano!! (un saluto a Giorgia)
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabella}
 
 % Document
 \begin{document}
 
-\LaTeX
+% \LaTeX
 
 \title{\textbf{Misura della caratteristica di due diodi a giunzione p-n}}
 \author{Castagnoli Alida, Forni Paolo}
@@ -47,9 +52,11 @@
 
 \end{abstract}
 % esempio di come includere un file
-\subfile{@SRC@/sections/example.tex}
+% \subfile{@SRC@/sections/example.tex}
 \subfile{@SRC@/sections/introduzione.tex}
 \subfile{@SRC@/sections/acquisizione.tex}
+\subfile{@SRC@/sections/analisi.tex}
+
 
 
 
