@@ -1,45 +1,44 @@
 \documentclass[@MAIN@]{subfiles}
 
 \begin{document}
-\hspace*{\fill}
-\begin{minipage}[b]{0.45\textwidth}
-  \centering
-  \begin{circuitikz}
-    \draw (5, 1) node[oscopeshape, rotate=-90, rotated instruments](O){};
-    \draw (3.5, 1) node[smetershape, rotate=-90, rotated instruments, t=V](V){};
-    \draw
-    (0,2) to[battery1]
-      (0,0) -- 
-      (1.5,0) to[american potentiometer]
-      (1.5,2) --
-      (0,2)
-    (1.5,2) -- 
-      (3,2) --
-      (3,2 |- V.in 1) to[short, -*]
-      (V.in 1)
-    (V.in 2) to[short, *-]
-      (V.in 2 -| 3,0) --
-      (3,0) --
-      (1.5, 0)
-    (3,2) --
-      (4.5,2) --
-      (4.5,2 |- O.in 1) to[short, -*]
-      (O.in 1)
-    (O.in 2) to[short, *-]
-      (O.in 2 -| 4.5, 0) --
-      (4.5, 0) --
-      (3,0)
-    (0,0) node[ground] {}
-    ;
-    \draw [line width=0.85pt]
-    (0.955,1) --
-      (0.955,0)
-    ;
-  \end{circuitikz}
-%  \captionof{figure}{Schema del circuito realizzato per l'acquisizione dei dati}
-%  \label{fig:circuito}
-\end{minipage}
-\hspace*{\fill}
+    \hspace*{\fill}
+    \begin{minipage}[b]{0.45\textwidth}
+        \centering
+        \begin{circuitikz}
+            \draw (5, 1) node[oscopeshape, rotate=-90, rotated instruments](O){};
+            \draw (3.5, 1) node[smetershape, rotate=-90, rotated instruments, t=V](V){};
+            \draw
+            (0,2) to[battery1]
+            (0,0) --
+            (1.5,0) to[american potentiometer]
+            (1.5,2) --
+            (0,2)
+            (1.5,2) --
+            (3,2) --
+            (3,2 |- V.in 1) to[short, -*]
+            (V.in 1)
+            (V.in 2) to[short, *-]
+            (V.in 2 -| 3,0) --
+            (3,0) --
+            (1.5, 0)
+            (3,2) --
+            (4.5,2) --
+            (4.5,2 |- O.in 1) to[short, -*]
+            (O.in 1)
+            (O.in 2) to[short, *-]
+            (O.in 2 -| 4.5, 0) --
+            (4.5, 0) --
+            (3,0)
+            (0,0) node[ground] {}
+            ;
+            \draw [line width=0.85pt]
+            (0.955,1) --
+            (0.955,0)
+            ;
+        \end{circuitikz}
+    \end{minipage}
+    \hspace*{\fill}
+
 \end{document}
 
 
