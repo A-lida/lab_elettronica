@@ -18,10 +18,26 @@
     e alimentati mediante un \textit{alimentatore di bassa tensione},
     erogante una differenza di potenziale di +5V costante.
     \\ \\
-    \subfile{../tabelle_e_circuito/circuito_calibrazione}
-    \hfill
-    \subfile{../tabelle_e_circuito/circuito_acquisizione}
-    % qui immagine circuiti
+    \begin{figure}[ht]
+        \centering
+        \begin{minipage}[b]{0.4\textwidth}
+            \centering
+            \subfile{../tabelle_e_circuito/circuito_calibrazione}
+            \caption*{(a) Calibrazione}
+
+
+        \end{minipage}
+        \hfill
+        \begin{minipage}[b]{0.55\textwidth}
+            \centering
+            \subfile{../tabelle_e_circuito/circuito_acquisizione}
+            \caption*{(b) Caratteristica}
+        \end{minipage}
+%        \vspace{0.5em} % Spazio opzionale tra minipage e caption generale
+        \caption{Circuiti realizzati: (a) calibrazione, (b) caratteristica.}
+        \label{fig:figura_circuiti}
+    \end{figure}
+
     \newpage
     Entrambi i circuiti, presentati schematicamente in figura 1, si compongono di
     un \textit{potenziometro} di portata pari a 1 k\textohm, di un amperometro e
@@ -48,14 +64,26 @@
     \end{center}
 
 
-    \begin{minipage}{.45\textwidth}
+    \begin{table}[ht]
         \centering
-        \subfile{../tabelle_e_circuito/silicio}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{.45\textwidth}
-        \centering
-        \subfile{../tabelle_e_circuito/germanio}
-    \end{minipage}
+        \begin{minipage}[t]{.45\textwidth}
+            \centering
+            \subfile{../tabelle_e_circuito/silicio}
+            \captionsetup{justification=centering} % Opzionale, migliora l'allineamento
+            \caption*{(a) Silicio} % Sottocaption
+        \end{minipage}
+        \hfill
+        {\begin{minipage}[t]{.45\textwidth}
+             \centering
+             \subfile{../tabelle_e_circuito/germanio}
+             \captionsetup{justification=centering} % Opzionale
+             \caption*{(b) Germanio} % Sottocaption
+        \end{minipage}}
 
+        \vspace{0.5em} % Spazio opzionale tra minipage e caption generale
+
+        \caption{Misura della caratteristica dei semiconduttori mediante \textit{multimetro digitale} e \textit{oscilloscopio}, con incertezze: (a) silicio, (b) germanio.}
+        \label{tab:tabelle_semiconduttori}
+
+    \end{table}
 \end{document}
