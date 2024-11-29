@@ -1,0 +1,41 @@
+\documentclass[@MAIN@]{subfiles}
+
+\begin{document}
+\hspace*{\fill}
+\begin{minipage}[b]{0.45\textwidth}
+  \centering
+  \begin{circuitikz}
+    \draw (4.5,1) node[smetershape, rotate=-90, rotated instruments, t=A](A){};
+    \draw (3,3.5) node[oscopeshape](O){};
+    \draw
+    (2,2) to[american potentiometer]
+      (0,2) to[battery1]
+      (0,0) 
+    (2,2) to[full diode] 
+      (4,2) --
+      (4,2 |- A.in 1) to[short, -*]
+      (A.in 1)
+    (A.in 2) to[short, *-]
+      (A.in 2 -| 4,0) --
+      (4,0) --
+      (0,0)
+    (2,2) --
+      (2,3) --
+      (2,3 -| O.in 1) to[short, -*]
+      (O.in 1)
+    (O.in 2) to[short, *-]
+      (O.in 2 |- 4,3) --
+      (4,3) --
+      (4,2)
+      (0,0) node[ground] {}
+    ;
+    \draw [line width=0.85pt]
+    (1,1.5) --
+      (1,0)
+    ;
+  \end{circuitikz}
+  \captionof{figure}{Schema del circuito realizzato per l'acquisizione dei dati}
+  \label{fig:circuito}
+\end{minipage}
+\hspace*{\fill}
+\end{document}
