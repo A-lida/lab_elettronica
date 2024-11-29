@@ -10,19 +10,20 @@
 % Document
 \begin{document}
 
-\section{Introduzione} \label{sec:introduzione}
-Con questo esperimento si vuole misurare la curva caratteristica
-\mbox{I-V} di due diodi, uno al silicio, l'altro al germanio.
-I diodi sono div
-non vale la legge di Ohm e che si comportano differentemente in
-base al verso della corrente che prova ad attraversarli. \\
-L'esperimento vuole sondare il comportamento in regime di
-polarizzazione diretta, che dovrebbe essere descritto dalla
-relazione
+    \section{Introduzione} \label{sec:introduzione}
+    L'esperimento prende in esame il comportamento di un diodo reale, un elemento circuitale
+    costituito da una giunzione \textit{p-n}, in regime di polarizzazione diretta.
+    L'andamento della corrente che attraversa un diodo in funzione della tensione,
+    sotto queste condizioni, è descritto dalla legge:
+    \begin{equation}
+        \label{eq:caratteristiche}
+        I(V_D) = I_0 \cdot e^{\frac{V_D}{\eta V_T}}
+    \end{equation}
+    L'esperimento vuole misurare la \textit{corrente inversa} $I_0$ e il valore
+    $\eta V_T$, prodotto del \textit{fattore di idealità} $\eta$ e
+    dell'\textit{equivalente in volt} della temperatura $V_T$. \\
+    La dipendenza dalla temperatura di $I_0$ è stata trascurata vista l'entità
+    delle correnti utilizzate $\sim 0.01-1$~mA.
 
-\begin{equation}
-\label{eq:caratteristiche}
-I(V_D) = I_0 e^{\frac{V_D}{\eta V_T}}
-\end{equation}
 
 \end{document}
