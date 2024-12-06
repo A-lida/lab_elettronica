@@ -31,7 +31,7 @@ Il fit lineare sui dati in Tabella~\ref{tab:calibrazione}
     \hline
     Pendenza & Intercetta (mV) \\
     \hline
-    1.001 \pm 0.019 & 0.8 \pm 1.8 \\
+    $1.001 \pm 0.019$ & $0.8 \pm 1.8$ \\
     \hline
   \end{tabular}
   \captionof{table}{Risultati del fit sui dati di calibrazione}
@@ -41,17 +41,17 @@ Il fit lineare sui dati in Tabella~\ref{tab:calibrazione}
 Come si può vedere in Tabella~\ref{tab:fit-calibrazione} entrambi i risultati
 sono compatibili con i valori attesi entro gli errori: rispettivamente 1 e 0. \\
 
-I dati delle curve caratteristiche (Tabelle~\subref*{tab:silicio}~e~\subref*{tab:germanio}) sono
-fittati secondo l'eq~\eqref{eq:caratteristiche} ma anche in scala semi logaritmica dove la
+I dati delle curve caratteristiche (Tabelle~\ref{tab:silicio}~e~\ref{tab:germanio}) sono
+fittati secondo l'eq\,\eqref{eq:caratteristiche} ma anche in scala semi logaritmica dove la
 relazione diventa:
-\begin{align*}
-  \ln (I(V_D)) &= \ln \left( I_0 \cdot \exp^{\frac{V_D}{\eta V_T}} \right) \iff \\
-  \iff I(V_D)_{ln} &= \frac{1}{\eta V_T} \cdot V_D + \ln (I_0)
-\end{align*}
-Al fine di utilizzare la regrssione lineare, generalmente più precisa del genrico
-metodo del minimo $\chi^2$; si veda l'appendice~\ref{sec:propagazione-errori-log}
-per la propagazione degli errori in scala semi logaritmica.
-Entrambi i fit restituiscono risultati compatibili entro gli errori.
+\begin{equation*}
+  \ln (I(V_D)) = \ln \left( I_0 \cdot \exp^{\frac{V_D}{\eta V_T}} \right) \implies
+  I_{ln}(V_D) = \frac{1}{\eta V_T} \cdot V_D + \ln (I_0)
+\end{equation*}
+Questa relazione permette di utilizzare la regrssione lineare, generalmente
+più precisa del genrico metodo del minimo $\chi^2$; si veda
+l'appendice~\ref{subsec:propagazione-errori-log} per la propagazione degli
+errori in scala semi logaritmica.
 \begin{center}
 \begin{minipage}{.95\textwidth}
   \centering
@@ -67,5 +67,46 @@ Entrambi i fit restituiscono risultati compatibili entro gli errori.
   \label{fig:germanio}
 \end{minipage}
 \end{center}
+I risultati dei fit nelle Figure \ref{fig:silicio} e \ref{fig:germanio}, sono:
+\begin{table}
+  \centering
+  \begin{subtable}{.45\textwidth}
+    \centering
+    \begin{tabular}{||c|c|c||}
+      \hline
+      \multicolumn{3}{||c||}{Silicio} \\
+      \hline
+      Scala & $\eta V_T$ & $I_0$ \\
+      \hline
+      lineare & & \\
+      \hline
+      semi logaritmica & & \\
+      \hline
+    \end{tabular}
+    \caption{Risultati fit caratteristica diodo al silicio}
+    \label{tab:fit-silicio}
+  \end{subtable}
+  \hfill
+  \begin{subtable}{.45\textwidth}
+    \centering
+    \begin{tabular}{||c|c|c||}
+      \hline
+      \multicolumn{3}{||c||}{Germanio} \\
+      \hline
+      Scala & $\eta V_T$ & $I_0$ \\
+      \hline
+      lineare & & \\
+      \hline
+      semi logaritmica & & \\
+      \hline
+    \end{tabular}
+    \caption{Risultati fit caratteristica diodo al germanio}
+    \label{tab:fit-germanio}
+  \end{subtable}
+  \caption{Risultati dei fit sui dati delle caratteristiche dei due diodi}
+  \label{tab:fit-diodi]
+\end{table}
+
+Entrambi i fit restituiscono risultati compatibili entro gli errori.
 
 \end{document}
