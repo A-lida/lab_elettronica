@@ -20,6 +20,7 @@
 % Pacchetto per includere altri file (da includere per ultimo)
 \usepackage{subfiles}
 
+% Setup dei pacchetti
 \graphicspath{{@IMAGES@}}
 
 % Document
@@ -51,11 +52,13 @@
     \end{align*}
 
 \end{abstract}
-% esempio di come includere un file
-% \subfile{@SRC@/sections/example.tex}
 \subfile{@SRC@/sections/introduzione.tex}
 \subfile{@SRC@/sections/acquisizione.tex}
 \subfile{@SRC@/sections/analisi.tex}
+
+\appendix
+
+\subfile{@SRC@/appendix/propagazione_errori_log.tex}
 
 
 
