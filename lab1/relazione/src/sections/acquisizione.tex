@@ -20,27 +20,30 @@
 
     \begin{figure}[ht]
         \centering
-        \begin{minipage}[b]{0.4\textwidth}
+        \begin{subfigure}[b]{0.4\textwidth}
             \centering
             \subfile{../tabelle_e_circuito/circuito_calibrazione}
-            \caption*{(a) Calibrazione}
-        \end{minipage}
+            \caption{Calibrazione}
+            \label{fig:circuito-calibrazione}
+        \end{subfigure}
         \hfill
-        \begin{minipage}[b]{0.55\textwidth}
+        \begin{subfigure}[b]{0.55\textwidth}
             \centering
             \subfile{../tabelle_e_circuito/circuito_acquisizione}
-            \caption*{(b) Caratteristica}
-        \end{minipage}
+            \caption{Caratteristica}
+            \label{fig:circuito-caratteristica}
+        \end{subfigure}
 %        \vspace{0.5em} % Spazio opzionale tra minipage e caption generale
         \caption{Circuiti realizzati: (a) calibrazione, (b) caratteristica.}
         \label{fig:figura_circuiti}
     \end{figure}
 
     \newpage
-    Entrambi i circuiti, presentati schematicamente in figura 1, si compongono di
-    un \textit{potenziometro} di portata pari a 1 k\textohm, di un amperometro e
+    Entrambi i circuiti, presentati schematicamente in Figura~1, si compongono di
+    un \textit{potenziometro} di portata pari a 1k\textohm, di un amperometro e
     di un voltmetro.
-    Il circuito in figura 1-b presenta anche il diodo a semiconduttore.
+    Il circuito in Figura~\ref{fig:circuito-caratteristica} presenta anche il diodo
+    a semiconduttore.
 
     Le misure di tensione sono state effettuante mediante l'ausilio di un
     \textit{oscilloscopio analogico} e di un \textit{multimetro digitale}, avente
