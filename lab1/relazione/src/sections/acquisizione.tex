@@ -67,19 +67,21 @@
 
     \begin{table}[ht]
         \centering
-        \begin{minipage}[t]{.45\textwidth}
+        \begin{subtable}[t]{.45\textwidth}
             \centering
             \subfile{../tabelle_e_circuito/silicio}
             \captionsetup{justification=centering} % Opzionale, migliora l'allineamento
-            \caption*{(a) Silicio} % Sottocaption
-        \end{minipage}
+            \caption{Silicio} % Sottocaption
+            \label{tab:silicio}
+        \end{subtable}
         \hfill
-        {\begin{minipage}[t]{.45\textwidth}
+        \begin{subtable}[t]{.45\textwidth}
              \centering
              \subfile{../tabelle_e_circuito/germanio}
              \captionsetup{justification=centering} % Opzionale
-             \caption*{(b) Germanio} % Sottocaption
-        \end{minipage}}
+             \caption{Germanio} % Sottocaption
+             \label{tab:germanio}   
+        \end{subtable}
 
         \vspace{0.5em} % Spazio opzionale tra minipage e caption generale
 
