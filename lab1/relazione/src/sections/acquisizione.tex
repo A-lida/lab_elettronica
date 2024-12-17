@@ -49,21 +49,17 @@
     \textit{oscilloscopio analogico} e di un \textit{multimetro digitale}, avente
     risoluzione pari a 0.1mV, quest'ultimo è stato impiegato anche per le misure
     di corrente, per le quali si ha risoluzione di 0.01mA.
+    \vspace{0.5}
 
     \subsection{Acquisizione dati}\label{subsec:acquisizione-dati}
 
-    Al fine di ottenere risultati attendibili, sono state effettuate due tipologie
-    di misure: inizialmente è stata condotta una presa dati per valutare la
-    calibrazione degli strumenti di misura, successivamente sono stati acquisiti
-    i dati di corrente e tensione per ricostruire la caratteristica dei diodi. \\
+    Al fine di ottenere risultati attendibili è stata condotta una presa dati per valutare la
+    calibrazione degli strumenti di misura, realizzando il circuito in Figura~\ref{fig:figura_circuiti}(a). Successivamente,
+    mediante la realizzazione del circuito schematizzato in Figura~\ref{fig:figura_circuiti}(b)
+    sono stati acquisiti i dati di corrente e tensione per ricostruire la caratteristica dei diodi.\newline
 
-    Il primo circuito .....
-    in seguito si riportano le misure
-    \\ \\
-    \begin{center}
-        \subfile{../tabelle_e_circuito/calibrazione}
-    \end{center}
-
+    \noindent In seguito si riportano i risultati delle misure effettuate.\newline
+    \vspace{1.5}
 
     \begin{table}[ht]
         \centering
@@ -76,17 +72,23 @@
         \end{subtable}
         \hfill
         \begin{subtable}[t]{.45\textwidth}
-             \centering
-             \subfile{../tabelle_e_circuito/germanio}
-             \captionsetup{justification=centering} % Opzionale
-             \caption{Germanio} % Sottocaption
-             \label{tab:germanio}   
+            \centering
+            \subfile{../tabelle_e_circuito/germanio}
+            \captionsetup{justification=centering} % Opzionale
+            \caption{Germanio} % Sottocaption
+            \label{tab:germanio}
         \end{subtable}
 
         \vspace{0.5em} % Spazio opzionale tra minipage e caption generale
 
-        \caption{Misura della caratteristica dei semiconduttori mediante \textit{multimetro digitale} e \textit{oscilloscopio}, con incertezze: (a) silicio, (b) germanio.}
+        \caption{Misura della caratteristica dei semiconduttori mediante \textit{multimetro digitale} e
+        \textit{oscilloscopio}, con incertezze: (a) silicio, (b) germanio.}
         \label{tab:tabelle_semiconduttori}
 
     \end{table}
+%    In seguito si riportano le misure acquisite.
+    \\ \\
+    \begin{center}
+        \subfile{../tabelle_e_circuito/calibrazione}
+    \end{center}
 \end{document}
