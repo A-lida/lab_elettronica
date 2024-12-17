@@ -35,7 +35,7 @@
     \end{figure}
 
     \newpage
-    Entrambi i circuiti, presentati schematicamente in Figura~1, si compongono di
+    Entrambi i circuiti, presentati schematicamente in Figura~\ref{fig:figura_circuiti}, si compongono di
     un \textit{potenziometro} di portata pari a 1k\textohm, di un amperometro e
     di un voltmetro.
     Il circuito in Figura~\ref{fig:circuito-caratteristica} presenta anche il diodo
@@ -50,11 +50,11 @@
     \subsection{Acquisizione dati}\label{subsec:acquisizione-dati}
 
     Al fine di ottenere risultati attendibili è stata condotta una presa dati per valutare la
-    calibrazione degli strumenti di misura, realizzando il circuito in Figura~\ref{fig:figura_circuiti}(a). Successivamente,
-    mediante la realizzazione del circuito schematizzato in Figura~\ref{fig:figura_circuiti}(b)
+    calibrazione degli strumenti di misura, realizzando il circuito in Figura~\ref{fig:circuito-calibrazione}. Successivamente,
+    mediante la realizzazione del circuito schematizzato in Figura~\ref{fig:circuito-caratteristica}
     sono stati acquisiti i dati di corrente e tensione per ricostruire la caratteristica dei diodi.\newline
 
-    \noindent In seguito si riportano i risultati delle misure effettuate.\newline
+    \noindent In seguito si riportano i risultati delle misure effettuate:\newline
     \vspace{1.5pt}
 
     \begin{table}[ht]
@@ -83,8 +83,12 @@
 
     \end{table}
 %    In seguito si riportano le misure acquisite.
-    \\
-    \begin{center}
+
+    \begin{table}[ht]
+        \centering
         \subfile{../tabelle_e_circuito/calibrazione}
-    \end{center}
+        \caption{Misura di tensione effettuate mediante \textit{multimetro digitale} ed \textit{oscilloscopio}, con relative incertezze.}
+        \label{tab:calibrazione}
+
+    \end{table}
 \end{document}
