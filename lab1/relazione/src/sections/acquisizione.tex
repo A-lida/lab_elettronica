@@ -3,11 +3,8 @@
 
 % Preamble
 \documentclass[@MAIN@]{subfiles}
-\usepackage{textcomp}
-\graphicspath{@IMAGES@}
-
+%\graphicspath{@IMAGES@}
 % tutti i pacchetti usati vanno nel main
-
 % Document
 \begin{document}
 
@@ -33,7 +30,6 @@
             \caption{Caratteristica}
             \label{fig:circuito-caratteristica}
         \end{subfigure}
-%        \vspace{0.5em} % Spazio opzionale tra minipage e caption generale
         \caption{Circuiti realizzati: (a) calibrazione, (b) caratteristica.}
         \label{fig:figura_circuiti}
     \end{figure}
@@ -49,7 +45,7 @@
     \textit{oscilloscopio analogico} e di un \textit{multimetro digitale}, avente
     risoluzione pari a 0.1mV, quest'ultimo è stato impiegato anche per le misure
     di corrente, per le quali si ha risoluzione di 0.01mA.
-    \vspace{0.5}
+    \vspace{0.5pt}
 
     \subsection{Acquisizione dati}\label{subsec:acquisizione-dati}
 
@@ -59,7 +55,7 @@
     sono stati acquisiti i dati di corrente e tensione per ricostruire la caratteristica dei diodi.\newline
 
     \noindent In seguito si riportano i risultati delle misure effettuate.\newline
-    \vspace{1.5}
+    \vspace{1.5pt}
 
     \begin{table}[ht]
         \centering
@@ -79,7 +75,7 @@
             \label{tab:germanio}
         \end{subtable}
 
-        \vspace{0.5em} % Spazio opzionale tra minipage e caption generale
+        \vspace{0.5pt} % Spazio opzionale tra minipage e caption generale
 
         \caption{Misura della caratteristica dei semiconduttori mediante \textit{multimetro digitale} e
         \textit{oscilloscopio}, con incertezze: (a) silicio, (b) germanio.}
@@ -87,7 +83,7 @@
 
     \end{table}
 %    In seguito si riportano le misure acquisite.
-    \\ \\
+    \\
     \begin{center}
         \subfile{../tabelle_e_circuito/calibrazione}
     \end{center}
