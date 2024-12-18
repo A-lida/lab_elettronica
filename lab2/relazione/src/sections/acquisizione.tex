@@ -1,0 +1,39 @@
+%! Author = alida
+%! Date = 18/12/2024
+
+% Preamble
+\documentclass[@MAIN@]{subfiles}
+%\graphicspath{@IMAGES@}
+% tutti i pacchetti usati vanno nel main
+% Document
+\begin{document}
+
+    \section{Apparato sperimentale e svolgimento} \label{sec:acquisizione}
+
+    \subsection{Apparato sperimentale}\label{subsec:apparato-sperimentale}
+
+    \subsection{Acquisizione dati}\label{subsec:acquisizione-dati}
+
+    \begin{table}[ht]
+        \centering
+        \subfile{../tabelle_e_circuito/100uA.tex}
+        \captionsetup{justification=centering} % Opzionale, migliora l'allineamento
+        \caption{Misura della caratteristica del diodo al Silicio mediante \textit{multimetro digitale} e
+        \textit{oscilloscopio}, con i fondo scala utilizzati. Si riportano anche le incertezze associate,
+            il cui calcolo è consultabile in METTERE REF APPENDICE.}
+        \label{tab:100uA}
+
+    \end{table}
+
+    \begin{table}[ht]
+        \centering
+        \subfile{../tabelle_e_circuito/200uA.tex}
+        \captionsetup{justification=centering} % Opzionale, migliora l'allineamento
+        \caption{Misura della caratteristica del diodo al Silicio mediante \textit{multimetro digitale} e
+        \textit{oscilloscopio}, con i fondo scala utilizzati. Si riportano anche le incertezze associate,
+            il cui calcolo è consultabile in METTERE REF APPENDICE.}
+        \label{tab:200uA}
+
+    \end{table}
+
+\end{document}

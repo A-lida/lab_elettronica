@@ -1,0 +1,59 @@
+%! Author = alida
+%! Date = 18/12/2024
+
+% Preamble
+\documentclass[11pt]{article}
+
+% Pacchetti per cose che non sono simboli
+\usepackage{graphicx} % per mettere i prefissi alle path delle immagini nei subfiles
+\usepackage{circuitikz}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[margin=2cm]{geometry}
+\usepackage{microtype} % Sinceramente non ho capito a cosa serva ma dicono sia magico
+
+% Paccheti per simboli
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{listings}
+
+% Pacchetto per includere altri file (da includere per ultimo)
+\usepackage{subfiles}
+
+% Setup dei pacchetti
+\graphicspath{{@IMAGES@}}
+
+\renewcommand{\tablename}{Tabella}
+\renewcommand{\figurename}{Figura}
+
+% Document
+\begin{document}
+
+% \LaTeX
+
+    \title{\textbf{Misura della caratteristica di un transistor BJT a giunzione n-p-n}}
+    \author{Castagnoli Alida, Forni Paolo}
+    \date{8 novembre 2024}
+%DA AGGIUNGERE IL TURNO (CREDO 2) E IL NUMERO DEL TAVOLO (NO IDEA) !!!!!!!!!!!!!!!!!!!!!!!
+    \maketitle
+
+
+    \vspace{-23pt}  % Riduce lo spazio sopra l'abstract
+
+    \begin{abstract}
+
+
+        gnegnegne
+
+    \end{abstract}
+    \subfile{@SRC@/sections/introduzione.tex}
+    \subfile{@SRC@/sections/acquisizione.tex}
+    \subfile{@SRC@/sections/analisi.tex}
+    \subfile{@SRC@/sections/conclusioni.tex}
+    \newpage
+
+    \appendix
+    \subfile{@SRC@/appendix/propagazione_errori_log.tex}
+
+
+\end{document}
