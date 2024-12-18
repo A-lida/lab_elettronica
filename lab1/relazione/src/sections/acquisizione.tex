@@ -56,39 +56,59 @@
 
     \noindent In seguito si riportano i risultati delle misure effettuate:\newline
     \vspace{1.5pt}
+%
+%    \begin{table}[ht]
+%        \centering
+%        \begin{subtable}[t]{.45\textwidth}
+%            \centering
+%            \subfile{../tabelle_e_circuito/silicio}
+%            \captionsetup{justification=centering} % Opzionale, migliora l'allineamento
+%            \caption{Silicio} % Sottocaption
+%            \label{tab:silicio}
+%        \end{subtable}
+%        \hfill
+%        \begin{subtable}[t]{.45\textwidth}
+%            \centering
+%            \subfile{../tabelle_e_circuito/germanio}
+%            \captionsetup{justification=centering} % Opzionale
+%            \caption{Germanio} % Sottocaption
+%            \label{tab:germanio}
+%        \end{subtable}
+%
+%        \vspace{0.5pt} % Spazio opzionale tra minipage e caption generale
+%
+%        \caption{Misura della caratteristica dei semiconduttori mediante \textit{multimetro digitale} e
+%        \textit{oscilloscopio}, con incertezze: (a) silicio, (b) germanio.}
+%        \label{tab:tabelle_semiconduttori}
+%
+%    \end{table}
+    \begin{table}[ht]
+        \centering
+        \subfile{../tabelle_e_circuito/germanio}
+        \captionsetup{justification=centering} % Opzionale
+        \caption{Misura della caratteristica del diodo al Germanio mediante \textit{multimetro digitale} e
+        \textit{oscilloscopio}, con i fondo scala utilizzati. Si riportano anche le incertezze associate,
+            il cui calcolo è consultabile in METTERE REF APPENDICE.}
+        \label{tab:germanio}
+    \end{table}
 
     \begin{table}[ht]
         \centering
-        \begin{subtable}[t]{.45\textwidth}
-            \centering
-            \subfile{../tabelle_e_circuito/silicio}
-            \captionsetup{justification=centering} % Opzionale, migliora l'allineamento
-            \caption{Silicio} % Sottocaption
-            \label{tab:silicio}
-        \end{subtable}
-        \hfill
-        \begin{subtable}[t]{.45\textwidth}
-            \centering
-            \subfile{../tabelle_e_circuito/germanio}
-            \captionsetup{justification=centering} % Opzionale
-            \caption{Germanio} % Sottocaption
-            \label{tab:germanio}
-        \end{subtable}
-
-        \vspace{0.5pt} % Spazio opzionale tra minipage e caption generale
-
-        \caption{Misura della caratteristica dei semiconduttori mediante \textit{multimetro digitale} e
-        \textit{oscilloscopio}, con incertezze: (a) silicio, (b) germanio.}
-        \label{tab:tabelle_semiconduttori}
+        \subfile{../tabelle_e_circuito/silicio}
+        \captionsetup{justification=centering} % Opzionale, migliora l'allineamento
+        \caption{Misura della caratteristica del diodo al Silicio mediante \textit{multimetro digitale} e
+        \textit{oscilloscopio}, con i fondo scala utilizzati. Si riportano anche le incertezze associate,
+            il cui calcolo è consultabile in METTERE REF APPENDICE.}
+        \label{tab:silicio}
 
     \end{table}
-%    In seguito si riportano le misure acquisite.
-
     \begin{table}[ht]
         \centering
         \subfile{../tabelle_e_circuito/calibrazione}
-        \caption{Misura di tensione effettuate mediante \textit{multimetro digitale} ed \textit{oscilloscopio}, con relative incertezze.}
+        \caption{Misura di tensione effettuate mediante \textit{multimetro digitale} ed \textit{oscilloscopio},
+            con relative incertezze. Si riportano inoltre i fondo scala utilizzati.}
         \label{tab:calibrazione}
 
     \end{table}
+
 \end{document}
