@@ -7,28 +7,51 @@
 
 % Document
 \begin{document}
+\section{Stima delle incertezze sui dati sperimentali}
+  \label{sec:stima-delle-incertezze-sui-dati-sperimentali}
+  Nei casi in cui la sensibilità dello strumento lo permetteva, gli errori sono
+  stati arrotondati a due cifre significative.
+  \subsection*{Multimetro}
+    Il multimetro digitale utilizzato è il \textit{FLUKE 175}.
+    Con esso sono state effettuate sia misure di corrente che di tensione:
+    \begin{itemize}
+      \item \textbf{Misure di tensione}: Secondo quanto riportato dal costruttore nel
+      range fino a 600~mV il multimetro ha una risoluzione di 0.1~mV e
+      l'errore da associare alla misura è il $15\%$ della lettura più 0.2~mV;
+      \item \textbf{Misure di corrente}: il costruttore riporta, nel range fino a
+      60~mA, una risoluzione di 0.01 mA e un errore pari all'$1\%$ della
+      lettura più 0.03~mA;
+    \end{itemize}
 
-\section{Propagazione errori}\label{sec:propagazione-errori}
-
-  \subsection{Stima delle incertezze sui dati sperimentali}
-    \label{subsec:propagazione-errori-misure}
-
-  \subsection{Propagazione degli errori in scala semi-logaritmica}
-    \label{subsec:propagazione-errori-log}
-
-    Per poter eseguire il test del $\chi^2$ sui dati anche in scala
-    semi-logaritmica, e per riottenere i valori reali dei risultati
-    dei fit, si sono dovute propagare le loro incertezze.
-    Non essendo il logaritmo e l'esponenziale funzioni lineari, si è
-    dovuti ricorrere alla formula generale per la propagazione degli
-    errori:
+  \subsection*{Oscilloscopio}
+    L'oscilloscopio è stato utilizzato per delle misure di tensione.
+    La formula per calcolare l'errore da associare alla misura è:
+    % TODO Capire a cosa è associato quell'errore
     \begin{equation*}
-      \Delta f(x_0) = f'(x_0) \cdot \Delta x
+      \sqrt {\left( \sigma_0 + \sigma_{non mi ricordo}  \right)^2 + \sigma_{lettura}^2}
     \end{equation*}
-    Che nei casi trattati da questo esperimento diventa:
-    \begin{align*}
-      \Delta \ln (I) &= \frac{\Delta I}{I} \\
-      \Delta I_0 = \Delta e^{\ln (I_0)} &= e^{\ln (I_0)}
-      \cdot \Delta \ln (I_0)
-    \end{align*}
+    Il costruttore riporta un errore sullo zero ($\sigma_0$) e un
+    errore sul ... ($\sigma_{...}$) pari al 3\% del fondo scala, e un
+    errore sulla lettura ($\sigma_{lettura}$) uguale al 5\% della
+    lettura moltiplicata per $\frac{1}{2}$.
+
+
+\section{Propagazione degli errori in scala semi-logaritmica}
+  \label{sec:propagazione-errori-log}
+
+  Per poter eseguire il test del $\chi^2$ sui dati anche in scala
+  semi-logaritmica, e per riottenere i valori reali dei risultati
+  dei fit, si sono dovute propagare le loro incertezze.
+  Non essendo il logaritmo e l'esponenziale funzioni lineari, si è
+  dovuti ricorrere alla formula generale per la propagazione degli
+  errori:
+  \begin{equation*}
+    \Delta f(x_0) = f'(x_0) \cdot \Delta x
+  \end{equation*}
+  Che nei casi trattati da questo esperimento diventa:
+  \begin{align*}
+    \Delta \ln (I) &= \frac{\Delta I}{I} \\
+    \Delta I_0 = \Delta e^{\ln (I_0)} &= e^{\ln (I_0)}
+    \cdot \Delta \ln (I_0)
+  \end{align*}
 \end{document}
