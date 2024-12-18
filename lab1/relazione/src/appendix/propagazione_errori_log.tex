@@ -3,8 +3,6 @@
 
 % Preamble
 \documentclass[@SRC@/main]{subfiles}
-\usepackage{amsmath}
-
 % tutti i pacchetti usati vanno nel main
 
 % Document
@@ -13,10 +11,10 @@
 \section{Propagazione errori}\label{sec:propagazione-errori}
 
   \subsection{Stima delle incertezze sui dati sperimentali}
-\label{subsec:propagazione-errori-misure}
+    \label{subsec:propagazione-errori-misure}
 
-\subsection{Propagazione degli errori in scala semi-logaritmica}
-\label{subsec:propagazione-errori-log}
+  \subsection{Propagazione degli errori in scala semi-logaritmica}
+    \label{subsec:propagazione-errori-log}
 
     Per poter eseguire il test del $\chi^2$ sui dati anche in scala
     semi-logaritmica, e per riottenere i valori reali dei risultati
@@ -31,6 +29,6 @@
     \begin{align*}
       \Delta \ln (I) &= \frac{\Delta I}{I} \\
       \Delta I_0 = \Delta e^{\ln (I_0)} &= e^{\ln (I_0)}
-        \cdot \Delta \ln (I_0)
+      \cdot \Delta \ln (I_0)
     \end{align*}
 \end{document}
