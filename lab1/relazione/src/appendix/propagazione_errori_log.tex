@@ -3,8 +3,8 @@
 
 % Preamble
 \documentclass[@SRC@/main]{subfiles}
+\usepackage{amsmath}
 
-\graphicspath{{@IMAGES@}}
 % tutti i pacchetti usati vanno nel main
 
 % Document
@@ -14,7 +14,22 @@
 \subsection{Stima delle incertezze sui dati sperimentali}
 \label{subsec:propagazione-errori-misure}
 
-\subsection{Propagazione degli errori nei fit}
+\subsection{Propagazione degli errori in scala semi-logaritmica}
 \label{subsec:propagazione-errori-log}
 
+    Per poter eseguire il test del $\chi^2$ sui dati anche in scala
+    semi-logaritmica, e per riottenere i valori reali dei risultati
+    dei fit, si sono dovute propagare le loro incertezze.
+    Non essendo il logaritmo e l'esponenziale funzioni lineari, si è
+    dovuti ricorrere alla formula generale per la propagazione degli
+    errori:
+    \begin{equation*}
+      \Delta f(x_0) = f'(x_0) \cdot \Delta x
+    \end{equation*}
+    Che nei casi trattati da questo esperimento diventa:
+    \begin{align*}
+      \Delta \ln (I) &= \frac{\Delta I}{I} \\
+      \Delta I_0 = \Delta e^{\ln (I_0)} &= e^{\ln (I_0)}
+        \cdot \Delta \ln (I_0)
+    \end{align*}
 \end{document}
