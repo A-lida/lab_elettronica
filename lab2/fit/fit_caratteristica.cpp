@@ -40,49 +40,33 @@ void create_graphs(const char *source_file, const char *title, const char* outpu
   TCanvas c{"", "", 1920, 1080};
   c.Divide(2);
 
-  TGraphErrors graph(source_file);
-  graph.SetTitle(title);
+  TGraphErrors graph_data(source_file);
+  graph_data.SetTitle(title);
 
   c.cd(1);
 
-  TF1 exp("esponenziale", "[0]*exp(x/[1])");
-  exp.SetParameters(1E-6, 355. / 6);
-  exp.SetParNames("I_{0}", "#eta V_{T}");
-  exp.SetLineColor(kOrange);
 
-  graph.SetMarkerSize(1);
-  graph.SetMarkerStyle(1);
-  graph.Fit(&exp);
+  graph_data.SetMarkerSize(1);
+  graph_data.SetMarkerStyle(1);
 
-  graph.Draw("AP*");
+  graph_data.Draw("AP*");
   c.Draw();
   cutiefier(c.GetPad(1));
 
-  auto N = graph.GetN();
-  auto y = new double[N];
-  std::memcpy(y, graph.GetY(), N * sizeof(double));
-  auto err_y = new double[N];
-  std::memcpy(err_y, graph.GetEY(), N * sizeof(double));
-
-  for (int i = 0; i < N; i++) {
-    err_y[i] = 1. / y[i] * err_y[i];
-    y[i] = TMath::Log(y[i]);
-  }
-
-  TGraphErrors graph_log{N, graph.GetX(), y, graph.GetEX(), err_y};
+  TGraphErrors graph_data{graph_data.GetN(), graph_data.GetX(), graph_data.GetX(), graph_data.GetEX(), graph_data.GetEY()};
 
   TF1 retta("caratteristica", "[0]+ x/ [1]");
   retta.SetParameters(-3, 1. / 50);
   retta.SetParNames("ln(I_{0})", "#eta V_{T}");
   retta.SetLineColor(kBlue);
 
-  graph_log.SetTitle(title);
-  graph_log.SetMarkerStyle(1);
-  graph_log.SetMarkerSize(1);
-  graph_log.Fit(&retta);
+  graph_fit.SetTitle(title);
+  graph_fit.SetMarkerStyle(1);
+  graph_fit.SetMarkerSize(1);
+  graph_fit.Fit(&retta);
 
   c.cd(2);
-  graph_log.Draw("AP*");
+  graph_fit.Draw("AP*");
   c.Draw();
   cutiefier(c.GetPad(2));
 
@@ -93,9 +77,9 @@ int main() {
   // void fit_diodi() {
   setStyle();
 
-  create_graphs("../fit/diodo_silicio.csv",
-                "Caratteristica corrente-tensione silicio;Tensione (mV);Corrente (mA)", "silicio.root");
+  create_graphs("../fit/dati_100uA.csv",
+                "Caratteristica corrente-tensione silicio;Tensione (mV);Corrente (mA)", "fit_100uA.root");
 
-  create_graphs("../fit/diodo_germanio.csv",
-                "Caratteristica corrente-tensione germanio;Tensione (mV);Corrente (mA)", "germanio.root");
+  create_graphs("../fit/dati_200uA.csv",
+                "Caratteristica corrente-tensione germanio;Tensione (mV);Corrente (mA)", "fit_200uA.root");
 }
