@@ -26,13 +26,12 @@
   \subsection*{Oscilloscopio}
     L'oscilloscopio è stato utilizzato per delle misure di tensione.
     La formula per calcolare l'errore da associare alla misura è:
-    % TODO Capire a cosa è associato quell'errore
     \begin{equation*}
-      \sqrt {\left( \sigma_0 + \sigma_{non mi ricordo}  \right)^2 + \sigma_{lettura}^2}
+      \sqrt {\left( \sigma_Z + \sigma_L  \right)^2 + \sigma_C^2}
     \end{equation*}
     Il costruttore riporta un errore sullo zero ($\sigma_0$) e un
-    errore sul ... ($\sigma_{...}$) pari al 3\% del fondo scala, e un
-    errore sulla lettura ($\sigma_{lettura}$) uguale al 5\% della
+    errore sulla lettura ($\sigma_L$) pari al 3\% del fondo scala, e un
+    errore dell costruttore ($\sigma_C$) uguale al 5\% della
     lettura moltiplicata per $\frac{1}{2}$.
 
 
