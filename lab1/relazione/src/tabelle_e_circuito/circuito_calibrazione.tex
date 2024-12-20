@@ -10,7 +10,7 @@
             \draw
             (0,2) to[battery1]
             (0,0) --
-            (1.5,0) to[american potentiometer]
+            (1.5,0) to[american potentiometer, name=P]
             (1.5,2) --
             (0,2)
             (1.5,2) --
@@ -32,8 +32,9 @@
             (0,0) node[ground] {}
             ;
             \draw [line width=0.85pt]
-            (0.955,1) --
-            (0.955,0)
+            (P.wiper) --
+            (0.7,0 |- P.wiper) --
+            (0.7,0)
             ;
         \end{circuitikz}
     \end{minipage}
