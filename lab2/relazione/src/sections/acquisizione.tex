@@ -12,11 +12,42 @@
 
     \subsection{Apparato sperimentale}\label{subsec:apparato-sperimentale}
 
+    L'apparato sperimentale si compone di un \textit{transistor BJT} composto da un
+    semiconduttore al silicio avente doppia giunzione di tipo p-n-p, e da due
+    \textit{potenziometri} aventi resistenze pari a 1k\textohm e 100k\textohm. Al fine di acquisire
+    le misure di corrente e tensione sono stati adoperati rispettivamente un \textit{multimetro digitale},
+    avente risoluzione pari a 0.01~mA e un \textit{oscilloscopio analogico}.
+    Il circuito realizzato è presentato schematicamente in Figura\ref{fig:circuito}.
+
+    \begin{figure}[h!]
+        \centering
+        \subfile{../tabelle_e_circuito/circuito_acquisizione}
+    \end{figure}
+    \newpage
     \subsection{Acquisizione dati}\label{subsec:acquisizione-dati}
+
+    La prima operazione effettuata, preliminare alla realizzazione
+    del circuito, è stata quella di settare una resistenza da 50k\textohm
+    sul potenziometro da 100k\textohm, in modo da non danneggiare il
+    transistor nella fase di inserimento dello stesso nel circuito.
+
+    Successivamente si collega l'emettitore a massa, il collettore al piedino centrale
+    del potenziometro da 1k\textohm, mentre la base viene collegata al multimetro
+    in modo da poter settare la corrente in ingresso. Si collega quindi
+    l'alimentazione, erogando una differenza di potenziale costante di -5V e
+    si imposta, mediante l'ausilio del multimetro, una corrente di base
+    a -100\textmu A. Tale multimetro viene collegato al piedino
+    centrale del potenziometro da 1~k\textohm e al collettore, a quest'ultimo
+    viene collegato anche un capo dell'oscilloscopio, il cui altro terminale è collegato a terra.
+    Si ottiene quindi la configurazione del circuito presentato in Figura\ref{fig:circuito} e si procede
+    pertanto all'acquisizione della caratteristica, variando la
+    resistenza del potenziometro da 1k\textohm.
+    Si ripete il precedente ragionamento settando una corrente di base
+    di -200~\textmu A, i risultati delle acquisizioni sono tabulati in seguito:
 
     \begin{table}[ht]
         \centering
-        \subfile{../tabelle_e_circuito/100uA.tex}
+        \subfile{../tabelle_e_circuito/100uA}
         \captionsetup{justification=centering} % Opzionale, migliora l'allineamento
         \caption{Misura della caratteristica del diodo al Silicio mediante \textit{multimetro digitale} e
         \textit{oscilloscopio}, con i fondo scala utilizzati. Si riportano anche le incertezze associate,
@@ -27,11 +58,11 @@
 
     \begin{table}[ht]
         \centering
-        \subfile{../tabelle_e_circuito/200uA.tex}
+        \subfile{../tabelle_e_circuito/200uA}
         \captionsetup{justification=centering} % Opzionale, migliora l'allineamento
-        \caption{Misura della caratteristica del diodo al Silicio mediante \textit{multimetro digitale} e
+        \caption{Misura della caratteristica in uscita del transistor BJT \textit{multimetro digitale} e
         \textit{oscilloscopio}, con i fondo scala utilizzati. Si riportano anche le incertezze associate,
-            il cui calcolo è consultabile in METTERE REF APPENDICE.}
+            il cui calcolo è consultabile in \ref{...}.}
         \label{tab:200uA}
 
     \end{table}
