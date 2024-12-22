@@ -33,9 +33,9 @@ int main() {
 
   TCanvas c{"", "", 1080, 1080};
   c.Divide(1);
-  TGraphErrors graph("../fit/calibrazione.csv");
-  graph.SetTitle("Calibrazione multimetro-oscilloscopio;Multimetro "
-                 "(mV);Oscilloscopio (mV)");
+  TGraphErrors graph("../calibrazione.csv");
+  graph.SetTitle("Calibrazione multimetro-oscilloscopio;V multimetro "
+                 "(mV);V oscilloscopio (mV)");
 
   TF1 retta("retta", "[0] * x + [1]", 0, 810);
   retta.SetParameters(1, 1);

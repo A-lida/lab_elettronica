@@ -36,12 +36,12 @@ void cutiefier(TVirtualPad* pad) {
   }
 }
 
-void create_graphs(const char *source_file, const char *title, const char* output_file) {
+void create_graphs(const char *source_file, const char *title1, const char *title2, const char* output_file) {
   TCanvas c{"", "", 1920, 1080};
   c.Divide(2);
 
   TGraphErrors graph(source_file);
-  graph.SetTitle(title);
+  graph.SetTitle(title1);
 
   c.cd(1);
 
@@ -75,8 +75,7 @@ void create_graphs(const char *source_file, const char *title, const char* outpu
   retta.SetParameters(-3, 1. / 50);
   retta.SetParNames("ln(I_{0})", "#eta V_{T}");
   retta.SetLineColor(kBlue);
-
-  graph_log.SetTitle(title);
+  graph_log.SetTitle(title2);
   graph_log.SetMarkerStyle(1);
   graph_log.SetMarkerSize(1);
   graph_log.Fit(&retta);
@@ -93,9 +92,9 @@ int main() {
   // void fit_diodi() {
   setStyle();
 
-  create_graphs("../fit/diodo_silicio.csv",
-                "Caratteristica corrente-tensione silicio;Tensione (mV);Corrente (mA)", "silicio.root");
+  create_graphs("../diodo_silicio.csv",
+                "Caratteristica corrente-tensione Silicio;V (mV);I (mA)", "Caratteristica corrente-tensione Silicio;V (mV);ln(I)", "silicio.root");
 
-  create_graphs("../fit/diodo_germanio.csv",
-                "Caratteristica corrente-tensione germanio;Tensione (mV);Corrente (mA)", "germanio.root");
+  create_graphs("../diodo_germanio.csv",
+                "Caratteristica corrente-tensione Germanio;V (mV);I (mA)", "Caratteristica corrente-tensione Germanio;V (mV);ln(I)", "germanio.root");
 }

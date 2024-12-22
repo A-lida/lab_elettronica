@@ -3,6 +3,7 @@
 
 % Preamble
 \documentclass[@MAIN@]{subfiles}
+\usepackage{textcomp}
 %\graphicspath{@IMAGES@}
 % tutti i pacchetti usati vanno nel main
 % Document
@@ -13,7 +14,8 @@
     \subsection{Apparato sperimentale}\label{subsec:apparato-sperimentale}
     L'apparato sperimentale si compone di due circuiti, realizzati su una millefori
     e alimentati mediante un \textit{alimentatore di bassa tensione},
-    erogante una differenza di potenziale di +5V costante.
+    erogante una differenza di potenziale di +5~V costante.
+\vspace{0.5cm}
 
     \begin{figure}[ht]
         \centering
@@ -36,79 +38,68 @@
 
     \newpage
     Entrambi i circuiti, presentati schematicamente in Figura~\ref{fig:figura_circuiti}, si compongono di
-    un \textit{potenziometro} di portata pari a 1k\textohm, di un amperometro e
+    un \textit{potenziometro} di portata pari a 1~k\textohm, di un amperometro e
     di un voltmetro.
     Il circuito in Figura~\ref{fig:circuito-caratteristica} presenta anche il diodo
     a semiconduttore.
 
     Le misure di tensione sono state effettuante mediante l'ausilio di un
     \textit{oscilloscopio analogico} e di un \textit{multimetro digitale}, avente
-    risoluzione pari a 0.1mV, quest'ultimo è stato impiegato anche per le misure
-    di corrente, per le quali si ha risoluzione di 0.01mA.
-    \vspace{0.5pt}
+    risoluzione pari a 0.1~mV, quest'ultimo è stato impiegato anche per le misure
+    di corrente, per le quali si ha risoluzione di 0.01~mA.
+    \vspace{0.2cm}
 
     \subsection{Acquisizione dati}\label{subsec:acquisizione-dati}
 
+    \subsection*{Calibrazione}
     Al fine di ottenere risultati attendibili è stata condotta una presa dati per valutare la
-    calibrazione degli strumenti di misura, realizzando il circuito in Figura~\ref{fig:circuito-calibrazione}. Successivamente,
-    mediante la realizzazione del circuito schematizzato in Figura~\ref{fig:circuito-caratteristica}
-    sono stati acquisiti i dati di corrente e tensione per ricostruire la caratteristica dei diodi.\newline
+    calibrazione degli strumenti di misura, realizzando il circuito in Figura~\ref{fig:circuito-calibrazione}. Variando
+    la resistenza del potenziometro utilizzato, sono state acquisite 15 misure di tensione per valori compresi tra 25 - 800 mV. \newline
 
-    \noindent In seguito si riportano i risultati delle misure effettuate:\newline
-    \vspace{1.5pt}
-%
-%    \begin{table}[ht]
-%        \centering
-%        \begin{subtable}[t]{.45\textwidth}
-%            \centering
-%            \subfile{../tabelle_e_circuito/silicio}
-%            \captionsetup{justification=centering} % Opzionale, migliora l'allineamento
-%            \caption{Silicio} % Sottocaption
-%            \label{tab:silicio}
-%        \end{subtable}
-%        \hfill
-%        \begin{subtable}[t]{.45\textwidth}
-%            \centering
-%            \subfile{../tabelle_e_circuito/germanio}
-%            \captionsetup{justification=centering} % Opzionale
-%            \caption{Germanio} % Sottocaption
-%            \label{tab:germanio}
-%        \end{subtable}
-%
-%        \vspace{0.5pt} % Spazio opzionale tra minipage e caption generale
-%
-%        \caption{Misura della caratteristica dei semiconduttori mediante \textit{multimetro digitale} e
-%        \textit{oscilloscopio}, con incertezze: (a) silicio, (b) germanio.}
-%        \label{tab:tabelle_semiconduttori}
-%
-%    \end{table}
-    \begin{table}[ht]
-        \centering
-        \subfile{../tabelle_e_circuito/germanio}
-        \captionsetup{justification=centering} % Opzionale
-        \caption{Misura della caratteristica del diodo al Germanio mediante \textit{multimetro digitale} e
-        \textit{oscilloscopio}, con i fondo scala utilizzati. Si riportano anche le incertezze associate,
-            il cui calcolo è consultabile in METTERE REF APPENDICE.}
-        \label{tab:germanio}
-    \end{table}
+    \noindent In seguito si riportano i risultati delle misure effettuate: \\
 
-    \begin{table}[ht]
-        \centering
-        \subfile{../tabelle_e_circuito/silicio}
-        \captionsetup{justification=centering} % Opzionale, migliora l'allineamento
-        \caption{Misura della caratteristica del diodo al Silicio mediante \textit{multimetro digitale} e
-        \textit{oscilloscopio}, con i fondo scala utilizzati. Si riportano anche le incertezze associate,
-            il cui calcolo è consultabile in METTERE REF APPENDICE.}
-        \label{tab:silicio}
-
-    \end{table}
     \begin{table}[ht]
         \centering
         \subfile{../tabelle_e_circuito/calibrazione}
         \caption{Misura di tensione effettuate mediante \textit{multimetro digitale} ed \textit{oscilloscopio},
             con relative incertezze. Si riportano inoltre i fondo scala utilizzati.}
         \label{tab:calibrazione}
+    \end{table}
+    \vspace{-0.1cm}
+
+    \subsection*{Caratteristiche}
+    Terminata l'acquisizione della retta di calibrazione, è stato realizzato il circuito schematizzato
+    in Figura~\ref{fig:circuito-caratteristica}, settando il potenziometro da 1~k\textohm\;a una resistenza pari
+    a 500~\textohm\;previo inserimento del diodo al Silicio.
+    Sono stati quindi acquisiti i dati di corrente e
+    tensione per ricostruire la caratteristica dei diodi, aumentando
+    progressivamente la resistenza sul potenziometro. \\
+
+    Si riportano le misure effettuate tabulate, evidenziando il fondo
+    scala utilizzato e l'incertezza associata.
+    Per il calcolo degli errori sulle misure fare riferimento
+    all'appendice~\ref{sec:stima-delle-incertezze-sui-dati-sperimentali}.\newline
+
+
+    \begin{table}[!ht]
+        \centering
+        \subfile{../tabelle_e_circuito/silicio}
+        \captionsetup{justification=centering} % Opzionale, migliora l'allineamento
+        \caption{Misura della caratteristica del diodo al Silicio, con incertezze associate.}
+        \label{tab:silicio}
 
     \end{table}
 
+    \vspace{1.5pt}
+    \begin{table}[!ht]
+        \centering
+        \subfile{../tabelle_e_circuito/germanio}
+        \captionsetup{justification=centering} % Opzionale
+        \caption{Misura della caratteristica del diodo al Germanio con incertezze associate.}
+        \label{tab:germanio}
+    \end{table}
+%, con i fondo scala utilizzati e le incertezze associate alle misure
+
+
 \end{document}
+%, con i fondo scala utilizzati e le incertezze associate alle misure

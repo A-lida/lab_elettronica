@@ -29,44 +29,42 @@
 % Document
 \begin{document}
 
-% \LaTeX
-
-    \title{\textbf{Misura della caratteristica di due diodi a giunzione p-n}}
-    \author{Castagnoli Alida, Forni Paolo}
-    \date{8 novembre 2024}
+\title{\textbf{Misura della caratteristica di due diodi a giunzione p-n}}
+\author{Castagnoli Alida, Forni Paolo}
+\date{8 novembre 2024}
 %DA AGGIUNGERE IL TURNO (CREDO 2) E IL NUMERO DEL TAVOLO (NO IDEA) !!!!!!!!!!!!!!!!!!!!!!!
-    \maketitle
+\maketitle
 
 
-    \vspace{-23pt}  % Riduce lo spazio sopra l'abstract
+\vspace{-23pt}  % Riduce lo spazio sopra l'abstract
 
-    \begin{abstract}
-        L'esperimento ha la finalità di misurare la curva caratteristica \mbox{I-V} di due diodi a semiconduttore,
-        al Germanio (Ge) e al Silicio (Si).
-        Successivamente, mediante due fit distinti, si vuole stimare la corrente inversa $I_{0}$ e il prodotto del
-        fattore di idealità con l'equivalente in Volt della temperatura $\eta V_{T}$.
+\begin{abstract}
+  L'esperimento ha la finalità di misurare la curva caratteristica \mbox{I-V} di due diodi a semiconduttore,
+  al Silicio (Si) e al Germanio (Ge).
+  Successivamente, mediante due fit distinti, si vuole stimare la corrente inversa $I_{0}$ e il prodotto del
+  fattore di idealità con l'equivalente in volt della temperatura $\eta V_{T}$.
 
-        \noindent Si riportano i valori misurati, con le relative incertezze associate:
-        \vspace{-1pt}
-        \begin{align*}
-            &\textnormal{Silicio:} \;
-            &I_{0} &= (2.3 \pm 4.1)\cdot 10^{-9} \;\;\textnormal{A} &
-            \eta V_{T} &= (47.8 \pm 7.3)\;\;\textnormal{mV} & \\
-            &\textnormal{Germanio:} \;
-            &I_{0} &= (9.1 \pm 2.2) \cdot 10^{-6} \;\;\textnormal{A} &
-            \eta V_{T} &= (54.4 \pm 3.1)\;\;\textnormal{mV} &
-        \end{align*}
+  \noindent Si riportano i valori misurati, con le relative incertezze associate:
+  
+  \begin{align*}
+    &\textnormal{Silicio:} \;
+    &I_{0} &= (2.3 \pm 4.1)\cdot 10^{-9} \;\;\textnormal{A} &
+    \eta V_{T} &= (47.8 \pm 7.3)\;\;\textnormal{mV} & \\
+    &\textnormal{Germanio:} \;
+    &I_{0} &= (9.1 \pm 2.2) \cdot 10^{-6} \;\;\textnormal{A} &
+    \eta V_{T} &= (54.4 \pm 3.1)\;\;\textnormal{mV} &
+  \end{align*}
 
-    \end{abstract}
-    \subfile{@SRC@/sections/introduzione.tex}
-    \subfile{@SRC@/sections/acquisizione.tex}
-    \newpage
-    \subfile{@SRC@/sections/analisi.tex}
-    \subfile{@SRC@/sections/conclusioni.tex}
-    \newpage
-    \appendix
+\end{abstract}
+\subfile{@SRC@/sections/introduzione.tex}
+\vspace{0.1cm}
+\subfile{@SRC@/sections/acquisizione.tex}
+\newpage
+\subfile{@SRC@/sections/analisi.tex}
+\subfile{@SRC@/sections/conclusioni.tex}
 
-    \subfile{@SRC@/appendix/propagazione_errori_log.tex}
-
+\clearpage
+\appendix
+\subfile{@SRC@/appendix/propagazione_errori_log.tex}
 
 \end{document}
