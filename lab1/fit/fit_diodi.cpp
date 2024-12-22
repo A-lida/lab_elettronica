@@ -93,8 +93,8 @@ int main() {
   setStyle();
 
   create_graphs("../diodo_silicio.csv",
-                "Caratteristica corrente-tensione Silicio;Tensione (mV);Corrente (mA)", "Caratteristica corrente-tensione Silicio;Tensione (mV);ln(Corrente)", "silicio.root");
+                "Caratteristica corrente-tensione Silicio;V (mV);I (mA)", "Caratteristica corrente-tensione Silicio;V (mV);ln(I)", "silicio.root");
 
   create_graphs("../diodo_germanio.csv",
-                "Caratteristica corrente-tensione Germanio;Tensione (mV);Corrente (mA)", "Caratteristica corrente-tensione Germanio;Tensione (mV);ln(Corrente)", "germanio.root");
+                "Caratteristica corrente-tensione Germanio;V (mV);I (mA)", "Caratteristica corrente-tensione Germanio;V (mV);ln(I)", "germanio.root");
 }
