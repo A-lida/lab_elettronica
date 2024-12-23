@@ -13,8 +13,10 @@ string(APPEND CMAKE_CXX_FLAGS " -Wall -Wextra")
 
 find_package(ROOT COMPONENTS CONFIG REQUIRED)
 
-add_executable(fit_caratteristica caratteristica.cpp)
+add_executable(fit_caratteristica
+        fit_caratteristica.cpp
+        graphic_stuff.cpp)
 
-target_link_libraries(fit_calibrazione PRIVATE  ROOT::Core ROOT::Hist ROOT::Physics ROOT::Gpad)
-target_link_libraries(fit_diodi PRIVATE  ROOT::Core ROOT::Hist ROOT::Physics ROOT::Gpad)
+target_include_directories(fit_caratteristica PRIVATE include)
+target_link_libraries(fit_caratteristica PRIVATE  ROOT::Core ROOT::Hist ROOT::Physics ROOT::Gpad ROOT::ROOTDataFrame)
 
