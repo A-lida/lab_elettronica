@@ -14,4 +14,10 @@ struct GraphInitializers {
   std::vector<double> EY{};
 };
 
+void readCsv(const char *source_file, GraphInitializers &data);
+
+void filterData(const GraphInitializers &allData, GraphInitializers &fit,
+                GraphInitializers &noFit, const double minX,
+                const double maxX);
+
 #endif //HEADER_HPP
