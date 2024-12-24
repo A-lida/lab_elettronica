@@ -40,12 +40,10 @@ void createSingleGraph(const char *source_file, const char *title,
 
   noFitGraph.SetTitle(title); // Title
 
-  // Creo la funzione di fit
-  TF1 retta("caratteristica", "[0] + x * [1]", minX, maxX);
-  retta.SetParameters(1, .5);
-  // FIXME V_{A} sarebbe l'intercetta con l'asse X, non so come chiamare
-  //  l'intercetta con l'asse Y
-  retta.SetParNames("V_{A}", "g");
+  // Creo la funzione di fit in modo che mi dia V_A
+  TF1 retta("caratteristica", "[0] * ( x - [1])", minX, maxX);
+  retta.SetParameters(1, -2);
+  retta.SetParNames("g (mA #upoint mV^{-1})", "V_{A} (mA)");
   retta.SetLineColor(kBlue);
 
   // Fitto con il range della funzione
@@ -66,8 +64,6 @@ void createSingleGraph(const char *source_file, const char *title,
 int main() {
   setStyle();
   // FIXME Aggiustare i titoli (così fanno un po' schifo)
-  // TODO Mettere i titoli anche ai grafici dei fit (dopo [23/12] lo faccio io
-  //  [Paolo])
   createSingleGraph(
       "../dati_100uA.csv",
       "Caratteristica corrente di collettore - tensione con corrente "
