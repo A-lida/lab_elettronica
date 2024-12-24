@@ -77,5 +77,4 @@ int main() {
       "Caratteristica corrente di collettore - tensione con corrente "
       "di base 200 #muA;Tensione (mV);Corrente (mA)",
       1.02, 3.1, "fit_200uA.root");
-  // TODO Calcolare i parametri beta & co.
 }

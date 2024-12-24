@@ -59,20 +59,26 @@ int main() {
   calcIndividualParams("fit_100uA.root", "100");
   calcIndividualParams("fit_200uA.root", "200");
 
-  // Calcolo il beta
+  // Leggo i dati per calcolare il beta
   GraphInitializers data1{};
   GraphInitializers data2{};
   readCsv("../dati_100uA.csv", data1);
   readCsv("../dati_200uA.csv", data2);
 
+  // Calcolo il beta per tutti i voltaggi che abbiamo acquisito
   std::transform(data1.Y.begin(), data1.Y.end(), data2.Y.begin(),
                  data1.Y.begin(),
-                 [](const double a, const double b) { return a - b; });
+                 [](const double a, const double b) { return (-a + b) / 0.1; });
   std::transform(data1.EY.begin(), data1.EY.end(), data2.EY.begin(),
                  data1.EY.begin(),
-                 [](const double a, const double b) { return a + b; });
+                 [](const double a, const double b) { return (a + b) / 0.1; });
 
+  // Stampo il beta
+  const auto chosenBetaIndex = std::find(data1.X.begin(), data1.X.end(), 2.) - data1.X.begin();
+  std::cout << "beta:\t" << data1.Y[chosenBetaIndex] << "\t+/*\t" << data1.EY[chosenBetaIndex] << std::endl;
+
+  // Creo il grafico dei beta (non che ci serva ma possiamo metterlo)
   TGraphErrors graph{static_cast<Int_t>(data1.X.size()), data1.X.data(),
-                        data1.Y.data(), data1.EX.data(), data1.EY.data()};
+                     data1.Y.data(), data1.EX.data(), data1.EY.data()};
   graph.SaveAs("graph.root");
 }
