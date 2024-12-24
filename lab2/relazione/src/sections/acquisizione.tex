@@ -14,18 +14,20 @@
 
     L'apparato sperimentale si compone di un \textit{transistor BJT} composto da un
     semiconduttore al silicio avente doppia giunzione di tipo p-n-p, e da due
-    \textit{potenziometri} aventi resistenze pari a 1~\;k\textohm\;e 100~\;k\textohm. Al fine di acquisire
-    le misure di corrente e tensione sono stati adoperati rispettivamente un \textit{multimetro digitale},
-    avente risoluzione pari a 0.01~\;mA e un \textit{oscilloscopio analogico}.
+    \textit{potenziometri} aventi resistenze pari a 1~k\textohm\;e 100~k\textohm.
+    Al fine di acquisire le misure di corrente e tensione sono stati adoperati
+    rispettivamente un \textit{multimetro digitale}, avente risoluzione pari a
+    0.01~mA e un \textit{oscilloscopio analogico}.
     \newpage
 
     \subsection{Acquisizione dati}\label{subsec:acquisizione-dati}
     \vspace{0.2cm}
     \subsection*{Settaggio corrente di base}
 
-    Le caratteristiche che si intendono acquisire durante l'esperimento, corrispondo alle correnti
-    di base di -100\;\textmu A e -200\;\textmu A. È quindi necessario impostare tali valori prima di realizzare
-    il circuito di acquisizione della caratteristica.
+    Le caratteristiche che si intendono acquisire durante l'esperimento,
+    corrispondo alle correnti di base di -100~\textmu A e -200~\textmu A.
+    È quindi necessario impostare tali valori prima di realizzare il circuito
+    di acquisizione della caratteristica.
 
     \begin{figure}[h!]
         \centering
@@ -34,24 +36,26 @@
         \label{fig:circuito-corrente-base}
     \end{figure}
 
-    \noindent La prima operazione effettuata, è stata quella di settare una resistenza da 50~\;k\textohm\;
-    sul potenziometro da 100~\;k\textohm, in modo da non danneggiare il
-    transistor nella fase di inserimento dello stesso nel circuito. \\
+    \noindent La prima operazione effettuata, è stata quella di settare
+    una resistenza da 50~k\textohm\; sul potenziometro da 100~k\textohm,
+    in modo da non danneggiare il transistor nella fase di inserimento dello stesso nel circuito. \\
     Successivamente si è collegato l'emettitore a massa, il collettore al piedino centrale
-    del potenziometro da 1~\;k\textohm, mentre la base è stata collegata al multimetro
-    in modo da poter settare la corrente in ingresso. In seguito, si alimenta il circuito erogando
-    una differenza di potenziale costante di -5~V e si imposta, mediante l'ausilio del multimetro,
-    una corrente di base pari a -100~\;\textmu A. Una rappresentazione schematica del circuito realizzato
-    è riportata in Figura~\ref{fig:circuito-corrente-base}.
+    del potenziometro da 1~k\textohm, mentre la base è stata collegata al multimetro
+    in modo da poter settare la corrente in ingresso.
+    In seguito, si alimenta il circuito erogando una differenza di potenziale
+    costante di -5~V e si imposta, mediante l'ausilio del multimetro,
+    una corrente di base pari a -100~\textmu A.
+    Una rappresentazione schematica del circuito realizzato è riportata
+    in Figura~\ref{fig:circuito-corrente-base}.
 
     % TODO: mettere tabella con acquisizione correnti di base
     \subsection*{Misura della caratteristica in uscita}
     Settata la corrente di base, si procede collegando il i capi del multimetro al piedino
-    centrale del potenziometro da 1~\;k\textohm\; e al collettore, a quest'ultimo
+    centrale del potenziometro da 1~k\textohm\; e al collettore, a quest'ultimo
     viene collegato anche un capo dell'oscilloscopio, il cui altro terminale è collegato a terra.
     Si ottiene quindi la configurazione del circuito presentato in Figura~\ref{fig:circuito-caratteristica}
     e si procede pertanto all'acquisizione della caratteristica, variando la
-    resistenza del potenziometro da 1~\;k\textohm.
+    resistenza del potenziometro da 1~k\textohm.
     Al fine di ottenere misure corrette della caratteristica in uscita, è stato necessario adottare
     un metodo sistematico durante l'acquisizione: sono stati misurati due valori di corrente a distanza di 10 s
     l'uno dall'altro, per la singola misura di tensione. Questa operazione si è rivelata necessaria in quanto
@@ -72,7 +76,7 @@
         \centering
         \subfile{../tabelle_e_circuiti/100uA}
         \captionsetup{justification=centering} % Opzionale, migliora l'allineamento
-        \caption{Misura della caratteristica in uscita del transistor BJT, per una corrente di base pari a -100\;\textmu A. Il
+        \caption{Misura della caratteristica in uscita del transistor BJT, per una corrente di base pari a -100~\textmu A. Il
         valore di corrente riportato rappresenta la media dei due valori misurati. Si
         riportano anche i fondo scala utilizzati e le incertezze associate, il cui calcolo
         è consultabile in ...} %    TODO: mettere ref quando ci sarà
@@ -83,7 +87,7 @@
         \centering
         \subfile{../tabelle_e_circuiti/200uA}
         \captionsetup{justification=centering} % Opzionale, migliora l'allineamento
-        \caption{Misura della caratteristica in uscita del transistor BJT, per una corrente di base pari a -200\;\textmu A. Il
+        \caption{Misura della caratteristica in uscita del transistor BJT, per una corrente di base pari a -200~\textmu A. Il
         valore di corrente riportato rappresenta la media dei due valori misurati. Si
         riportano anche i fondo scala utilizzati e le incertezze associate, il cui calcolo
         è consultabile in ...} %    TODO: mettere ref quando ci sarà
