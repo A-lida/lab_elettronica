@@ -27,7 +27,7 @@ void cutiefier(TVirtualPad *pad) {
           static_cast<TPaveStats *>(pad->GetPrimitive("stats"))) {
     // Cambia le coordinate NDC (x1, y1, x2, y2)
     statbox->SetX1NDC(
-        0.486422); // Nuova posizione X1 (vicino al bordo sinistro)
+        0.76422); // Nuova posizione X1 (vicino al bordo sinistro)
     statbox->SetX2NDC(0.986075); // Nuova posizione X2
     statbox->SetY1NDC(0.840136); // Altezza inferiore
     statbox->SetY2NDC(0.944496); // Altezza superiore

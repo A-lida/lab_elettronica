@@ -15,8 +15,16 @@ find_package(ROOT COMPONENTS CONFIG REQUIRED)
 
 add_executable(fit_caratteristica
         fit_caratteristica.cpp
-        graphic_stuff.cpp)
+        graphic_stuff.cpp
+        data_handling.cpp)
 
 target_include_directories(fit_caratteristica PRIVATE include)
 target_link_libraries(fit_caratteristica PRIVATE  ROOT::Core ROOT::Hist ROOT::Physics ROOT::Gpad ROOT::ROOTDataFrame)
 
+add_executable(grafico_aggregato
+        grafico_aggregato.cpp
+        graphic_stuff.cpp
+        data_handling.cpp)
+
+target_include_directories(grafico_aggregato PRIVATE include)
+target_link_libraries(grafico_aggregato PRIVATE  ROOT::Core ROOT::Hist ROOT::Physics ROOT::Gpad ROOT::ROOTDataFrame)
