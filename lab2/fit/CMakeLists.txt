@@ -28,3 +28,10 @@ add_executable(grafico_aggregato
 
 target_include_directories(grafico_aggregato PRIVATE include)
 target_link_libraries(grafico_aggregato PRIVATE  ROOT::Core ROOT::Hist ROOT::Physics ROOT::Gpad ROOT::ROOTDataFrame)
+
+add_executable(calc_params
+        calc_params.cpp
+        data_handling.cpp)
+
+target_include_directories(calc_params PRIVATE include)
+target_link_libraries(calc_params PRIVATE  ROOT::Core ROOT::Hist ROOT::Gpad ROOT::ROOTDataFrame)

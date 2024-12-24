@@ -1,11 +1,11 @@
 #include "TCanvas.h"
 #include "TF1.h"
+#include "TFile.h"
 #include "TGraphErrors.h"
 #include "TPad.h"
 
-#include "graphic_stuff.h"
 #include "data_handling.hpp"
-
+#include "graphic_stuff.h"
 
 void createSingleGraph(const char *source_file, const char *title,
                        const double minX, const double maxX,
@@ -57,9 +57,10 @@ void createSingleGraph(const char *source_file, const char *title,
   cutiefier(c.GetPad(1));
 
   // Salvo il risultato
-  c.SaveAs(output_file);
+  std::unique_ptr<TFile> file(TFile::Open(output_file, "RECREATE"));
+  file->WriteObject(&c, "c");
+  file->WriteObject(&retta, "fit");
 }
-
 
 int main() {
   setStyle();
