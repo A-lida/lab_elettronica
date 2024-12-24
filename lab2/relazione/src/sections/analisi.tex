@@ -4,13 +4,137 @@
 % Preamble
 \documentclass[../main.tex]{subfiles}
 \graphicspath{{../images}}
+
 % tutti i pacchetti usati vanno nel main
 
 % Document
 \begin{document}
-    
-    \section{Analisi}\label{analisi}
-%    \subfile{../tabelle_e_circuiti/100uA}
 
-   
+    \section{Analisi}\label{analisi}
+%    \subfile{../../relazione/images}
+    Nella fase di analisi, è stato effettuato un fit lineare ai dati delle caratteristiche in uscita,
+    riportati nelle Tabelle~\ref{tab:100uA}~e~\ref{tab:200uA}. Sono stati scelti solo i punti blablabla
+    % TODO: finire discorso fit
+
+    % TODO: foto grafici
+    \begin{table}[ht]
+        \centering
+        \begin{subtable}[t]{.45\textwidth}
+            \centering
+            \begin{tabular}{||c|c||}
+                \hline
+                \multicolumn{2}{||c||}{Corrente di base di -100\;\textmu A} \\
+                \hline
+                \rule{0pt}{3ex} $V_A$ (\textnormal{A}) & $\varDelta V_{CE} / \varDelta I_C$ (\textohm) \\[1ex]
+                \hline
+                $(...\pm...)\cdot $    & $...\pm...$                                   \\
+                \hline
+            \end{tabular}
+            \caption{-100}
+            \label{tab:fit-100uA}
+        \end{subtable}
+        \hfill
+        \begin{subtable}[t]{.45\textwidth}
+            \centering
+            \begin{tabular}{||c|c||}
+
+                \hline
+                \multicolumn{2}{||c||}{Corrente di base di -200\;\textmu A} \\
+                \hline
+
+                \rule{0pt}{3ex} $V_A$ (\textnormal{V}) & $\frac{\varDelta V_{CE}}{\varDelta I_C}$ (\textohm) \\ [1ex]
+                \hline
+                $...\pm... $           & $...\pm...$                                          \\
+                \hline
+            \end{tabular}
+            \caption{-200\;\textmu A.}
+            \label{tab:fit-200uA}
+        \end{subtable}
+
+        \vspace{0.5pt} % Spazio opzionale tra minipage e caption generale
+
+        \caption{Risultati dei fit lineari effettuati sulle misure delle caratteristiche in uscita del transistor BJT,
+            corrispondenti a una corrente di base di (a) -100\;\textmu A, (b) -200\;\textmu A.}
+        \label{tab:fit_caratteristiche}
+
+    \end{table}
+    % TODO: capire quanle tabella ti piace di più
+%    \begin{table}[ht]
+%        \centering
+%        \begin{tabular}{||c|c||}
+%            \hline
+%            \multicolumn{2}{||c||}{Corrente di base di -100\;\textmu A} \\
+%            \hline
+%            $V_A$ (\textnormal{A}) & $\varDelta V_{CE} / \varDelta I_C$ (\textohm) \\
+%            \hline
+%            $(...\pm...)\cdot $    & $...\pm...$                                   \\
+%            \hline
+%        \end{tabular}
+%        \caption{Risultati dei fit lineari effettuati sulle misure delle caratteristiche in uscita del transistor BJT,
+%            corrispondente a una corrente di base di -100\;\textmu A.}
+%        \label{tab:fit-100uA}
+%    \end{table}
+
+%    \begin{table}[ht]
+%        \centering
+%        \begin{tabular}{||c|c||}
+%            \hline
+%            \multicolumn{2}{||c||}{Corrente di base di -200\;\textmu A} \\
+%            \hline
+%            $V_A$ (\textnormal{V}) & $\eta \varDelta V_{CE} / \varDelta I_C$ (\textohm)) \\
+%            \hline
+%            $(...\pm...)\cdot $    & $...\pm...$                                         \\
+%            \hline
+%        \end{tabular}
+%        \caption{Risultati dei fit lineari effettuati sulle misure delle caratteristiche in uscita del transistor BJT,
+%            corrispondente a una corrente di base di -200\;\textmu A.}
+%        \label{tab:fit-200uA}
+%    \end{table}
+
+    I valori ottenuti dai fit sono stati utilizzati per calcolare il valore
+    di conduttanza in uscita:
+
+    \begin{equation*}
+        \centering
+        g = \frac{\varDelta I_C}{\varDelta V_{CE}}
+    \end{equation*}
+
+    Si riportano tabulati in seguito i le stime dei valori di conduttanza
+    per correnti di base di -100\;\textmu~A e -200\;\textmu~A, calcolati mediante
+    i valori riportati rispettivamente nella Tabella~\ref{tab:fit_caratteristiche}.
+
+    \begin{table}[ht]
+        \centering
+        \begin{tabular}{||c|c||}
+            \hline
+            \multicolumn{2}{||c||}{Conduttanza di uscita} \\
+            \hline
+            $I_B$ (\textnormal{\textmu~A}) & $g$ (1/\textohm)) \\
+            \hline
+            $(-100\pm...) $                & $...\pm...$       \\
+            \hline
+            $(-200\pm...) $                & $...\pm...$       \\
+            \hline
+        \end{tabular}
+        \caption{stima della conduttanza di uscita per due diversi valori di correnti di base, con incertezze.
+        Per approfondire la valutazione delle incertezze si consulti Appendice ...} % TODO: mettere ref appendice
+        \label{tab:conduttanza}
+    \end{table}
+
+    Utilizzando i valori di conduttanza (Tabella~\ref{tab:conduttanza}) e le misure effettuate per le correnti di
+    base ... si vuole calcolare il guadagno di corrente,
+    \begin{equation*}
+        \centering
+        \beta (V_{CE}) = \frac{\varDelta I_C}{\varDelta I_B}
+    \end{equation*}
+
+    Al fine di garantire una stima più accurata, sono stati valutati i guadagni
+    per diversi valori di tensione $V_{CE}$ e successivamente ne è stata calcolata la media,
+    si riporta in seguito il risultato:
+
+    \begin{align*}
+        \centering
+        \beta = ... \pm ...
+    \end{align*}
+
 \end{document}
