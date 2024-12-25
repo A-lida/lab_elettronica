@@ -30,8 +30,8 @@ void createMultiGraph(const std::vector<const char *> &source_files,
     graphs.back().SetMarkerStyle(1);
   }
 
-  graphs[0].SetMarkerColor(kBlue);
-  graphs[1].SetMarkerColor(kRed);
+  graphs[0].SetMarkerColor(kOrange+7);
+  graphs[1].SetMarkerColor(kSpring-1);
 
   graphs[0].SetTitle(title);
 
@@ -47,7 +47,6 @@ int main() {
   setStyle();
 
   createMultiGraph({"../dati_200uA.csv", "../dati_100uA.csv"},
-                   "Caratteristiche a 100#muA e 200#muA a confronto;Tensione "
-                   "(mV);Corrente (mA)",
+                   "Caratteristiche a -100#muA e -200#muA a confronto;-V_{CE} (mV);-I_{C} (mA)",
                    "aggregato.root");
 }
