@@ -75,7 +75,7 @@ int main() {
 
   // Stampo il beta
   const auto chosenBetaIndex = std::find(data1.X.begin(), data1.X.end(), 2.) - data1.X.begin();
-  std::cout << "beta:\t" << data1.Y[chosenBetaIndex] << "\t+/*\t" << data1.EY[chosenBetaIndex] << std::endl;
+  std::cout << "beta:\t" << data1.Y[chosenBetaIndex] << "\t+/-\t" << data1.EY[chosenBetaIndex] << std::endl;
 
   // Creo il grafico dei beta (non che ci serva ma possiamo metterlo)
   TGraphErrors graph{static_cast<Int_t>(data1.X.size()), data1.X.data(),
