@@ -2,6 +2,7 @@
 // Created by pi on 12/24/24.
 //
 
+#include "TCanvas.h"
 #include "TF1.h"
 #include "TFile.h"
 #include "TGraphErrors.h"
@@ -105,8 +106,10 @@ int main() {
 
   // Creo il grafico dei beta (non che ci serva ma possiamo metterlo)
   TGraphErrors graph{static_cast<Int_t>(data1.X.size()), data1.X.data(),
-                           data1.Y.data(), data1.EX.data(), data1.EY.data()};
-
+                     data1.Y.data(), data1.EX.data(), data1.EY.data()};
   graph.SetTitle("Guadagno di corrente tra 100 e 200 #muA;V_{CE} (V);#beta");
-  graph.SaveAs("graph.root");
+  TCanvas c{"", "", 1500, 1000};
+
+  graph.Draw();
+  c.SaveAs("graph.root");
 }
