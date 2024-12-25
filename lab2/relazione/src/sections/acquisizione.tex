@@ -50,11 +50,16 @@
     Si ottiene quindi la configurazione del circuito presentato in Figura~\ref{fig:circuito-caratteristica}
     e si procede pertanto all'acquisizione della caratteristica, variando la
     resistenza del potenziometro da 1~\;k\textohm.
-    Al fine di ottenere misure corrette della caratteristica in uscita, è stato necessario adottare
-    un metodo sistematico durante l'acquisizione: sono stati misurati due valori di corrente a distanza di 10 s
-    l'uno dall'altro, per la singola misura di tensione. Questa operazione si è rivelata necessaria in quanto
-    per valori di corrente dell'ordine del ..... la dipendenza della ..... dalla temperatura non è trascurabile.
-%    TODO: finire questa frase decentemente!
+
+    Per ovviare, almeno in parte, al problema legato alla
+    temperatura descritto nella sezione~\ref{sec:introduzione},
+    sono stati presi due accorgimenti:
+    si è iniziata l'acquisizione dati dalle tensioni (e di
+    conseguenza correnti) maggiori, andando così a ridurre
+    progressivamente il riscaldamento del BJT per effetto Joule
+    che per sua natura tende ad auto accrescersi;
+    per ogni valore di tensione sono state effettuate due
+    misure di corrente a distanza di 10 s e si è presa la media.
 
     \begin{figure}[ht]
         \centering
