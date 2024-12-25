@@ -65,16 +65,14 @@ void createSingleGraph(const char *source_file, const char *title,
 int main() {
   setStyle();
   // FIXME Aggiustare i titoli (così fanno un po' schifo)
-  createSingleGraph(
-      "../dati_100uA.csv",
-      "Caratteristica corrente di collettore - tensione con corrente "
-      "di base 100 #muA;Tensione (mV);Corrente (mA)",
-      0.9, 3.3, "fit_100uA.root");
+  createSingleGraph("../dati_100uA.csv",
+                    "Caratteristica I_{C}-V_{EC}, con una corrente di base di "
+                    "-100 #muA;-V_{CE} (V);-I_{C} (mA)",
+                    0.9, 3.3, "fit_100uA.root");
 
   // TODO Testare con Chauvenier se il dato a 1.5 è rigettabile
-  createSingleGraph(
-      "../dati_200uA.csv",
-      "Caratteristica corrente di collettore - tensione con corrente "
-      "di base 200 #muA;Tensione (mV);Corrente (mA)",
-      1.02, 3.1, "fit_200uA.root");
+  createSingleGraph("../dati_200uA.csv",
+                    "Caratteristica I_{C}-V_{EC}, con una corrente di base di "
+                    "-200 #muA;-V_{CE} (V);-I_{C} (mA)",
+                    1.02, 3.1, "fit_200uA.root");
 }
