@@ -89,8 +89,6 @@ int main() {
                    const double baseDifferenceErr = err1 + err2;
                    const double baseDifferenceRelErr = baseDifferenceErr / 0.1;
 
-                   std::cout << collectorDifferenceRelErr << "\n"
-                             << baseDifferenceRelErr << "\n\n";
                    const double totalRelErr =
                        collectorDifferenceRelErr + baseDifferenceRelErr;
                    const double totalErr = totalRelErr * data1.Y[i];
@@ -106,7 +104,9 @@ int main() {
             << data1.EY[chosenBetaIndex] << std::endl;
 
   // Creo il grafico dei beta (non che ci serva ma possiamo metterlo)
-  const TGraphErrors graph{static_cast<Int_t>(data1.X.size()), data1.X.data(),
+  TGraphErrors graph{static_cast<Int_t>(data1.X.size()), data1.X.data(),
                            data1.Y.data(), data1.EX.data(), data1.EY.data()};
+
+  graph.SetTitle("Guadagno di corrente tra 100 e 200 #muA;V_{CE} (V);#beta");
   graph.SaveAs("graph.root");
 }
