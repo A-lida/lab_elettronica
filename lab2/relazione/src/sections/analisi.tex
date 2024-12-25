@@ -3,7 +3,6 @@
 
 % Preamble
 \documentclass[../main.tex]{subfiles}
-\graphicspath{{../images}}
 
 % tutti i pacchetti usati vanno nel main
 
@@ -25,7 +24,30 @@
         dove $g$ è la pendenza della retta, mentre $V_A$ rappresenta
         l'ascissa dell'intercetta con l'asse X.
 
-    % TODO: foto grafici
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=.69\textwidth]{../../images/caratteristica-100uA}
+            \caption{
+                Grafico della caratteristica $I_C - V_{CE}$ ad assi
+                invertiti e fit della regione attiva, con una
+                corrente di base pari a 100 \textmu A.
+            }
+            \label{fig:fit-100}
+        \end{figure}
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=.69\textwidth]{../../images/caratteristica-200uA}
+            \caption{
+                Grafico della caratteristica $I_C - V_{CE}$ ad assi
+                invertiti e fit della regione attiva, con una
+                corrente di base pari a 200 \textmu A.
+            }
+            \label{fig:fit-200}
+        \end{figure}
+        I risultati dei fit raffigurati nelle
+        Figure~\ref{fig:fit-100}~e~\ref{fig:fit-200} sulle due
+        caratteristiche sono rispettivamente:
+
     \begin{table}[ht]
         \centering
         \begin{subtable}[t]{.45\textwidth}
@@ -136,10 +158,19 @@
         \beta(V_{CE}) = \frac{\varDelta I_C(V_{CE})}{\varDelta I_B} = \frac{\varDelta I_C(V_{CE})}{0.1}
     \end{equation*}
 
-    % TODO mettere grafico e ref
-    % Immagine del grafico qui
-
-    Tar i punti nel grafico in Figura~... si riporta esplicitamente il valore $\beta(2) = 135.8 \pm  5.6$
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\textwidth]{../../images/beta}
+        \caption{
+            Grafico del guadagno di corrente $\beta$ in funzione di
+            $V_{CE}$, tra i valori 100 e 200 \textmu A di $I_B$.
+        }
+        \label{fig:beta}
+    \end{figure}
+    È immediato notare l'entità degli errori sui valori di $\beta$
+    riportati nel grafico in Figura~\ref{fig:beta}, per la
+    spiegazione si veda l'appendice~... .
+    Tar i punti nel grafico si riporta esplicitamente il valore $\beta(2) = 135 \pm  87$
 
 %    Utilizzando i valori di conduttanza (Tabella~\ref{tab:conduttanza}) e le misure effettuate per le correnti di
 %    base ... si vuole calcolare il guadagno di corrente,
