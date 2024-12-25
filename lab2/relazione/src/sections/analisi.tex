@@ -18,9 +18,12 @@
         Tabelle~\ref{tab:100uA}~e~\ref{tab:200uA}.
         Per la precisione, al fine di ricavare i parametri
         desiderati direttamente dal fit, questo è stato eseguito
-        secondo la funzione $y = g \cdot ( x - V_A)$ dove $g$ è la
-        pendenza della retta, mentre $V_A$ rappresenta l'ascissa
-        dell'intercetta con l'asse X.
+        secondo la funzione
+        \begin{equation*}
+            y = g \cdot ( x - V_A)
+        \end{equation*}
+        dove $g$ è la pendenza della retta, mentre $V_A$ rappresenta
+        l'ascissa dell'intercetta con l'asse X.
 
     % TODO: foto grafici
     \begin{table}[ht]
@@ -29,11 +32,11 @@
             \centering
             \begin{tabular}{||c|c||}
                 \hline
-                \multicolumn{2}{||c||}{Corrente di base di -100\;\textmu A} \\
+                \multicolumn{2}{||c||}{Corrente di base di -100~\textmu A} \\
                 \hline
-                \rule{0pt}{3ex} $V_A$ (\textnormal{V}) & $\varDelta V_{CE} / \varDelta I_C$ (\textohm) \\[1ex]
+                \rule{0pt}{3ex} $V_A$ (V) & $g$ (\textohm$^{-1}$) \\[1ex]
                 \hline
-                $(...\pm...)\cdot $    & $...\pm...$                                   \\
+                $15.2 \pm 1.1$    & $1.069 \pm 0.069$                                   \\
                 \hline
             \end{tabular}
             \caption{-100}
@@ -45,15 +48,15 @@
             \begin{tabular}{||c|c||}
 
                 \hline
-                \multicolumn{2}{||c||}{Corrente di base di -200\;\textmu A} \\
+                \multicolumn{2}{||c||}{Corrente di base di -200~\textmu A} \\
                 \hline
 
-                \rule{0pt}{3ex} $V_A$ (\textnormal{V}) & $\frac{\varDelta V_{CE}}{\varDelta I_C}$ (\textohm) \\ [1ex]
+                \rule{0pt}{3ex} $V_A$ (V) & $g$ (\textohm$^{-1}$) \\ [1ex]
                 \hline
-                $...\pm... $           & $...\pm...$                                          \\
+                $12.46 \pm 0.93 $           & $2.21 \pm 0.14$                                          \\
                 \hline
             \end{tabular}
-            \caption{-200\;\textmu A.}
+            \caption{-200 \textmu A.}
             \label{tab:fit-200uA}
         \end{subtable}
 
@@ -97,17 +100,18 @@
 %        \label{tab:fit-200uA}
 %    \end{table}
 
-    I valori ottenuti dai fit sono stati utilizzati per calcolare il valore
-    di conduttanza in uscita:
+    I valori ottenuti dai fit sono stati utilizzati per calcolare
+    il valore della resistenza in uscita $b$
 
     \begin{equation*}
-        \centering
-        g = \frac{\varDelta I_C}{\varDelta V_{CE}}
+        b = \frac{\varDelta V_{CE}}{\varDelta I_C} =
+        \left( \frac{\varDelta I_C}{\varDelta V_{CE}} \right)^{-1} = g^{-1}
     \end{equation*}
 
-    Si riportano tabulati in seguito i le stime dei valori di conduttanza
-    per correnti di base di -100 \textmu A e -200 \textmu A, calcolati mediante
-    i valori riportati rispettivamente nella Tabella~\ref{tab:fit_caratteristiche}.
+    Si riportano tabulati in seguito i le stime dei valori di resistenza
+    per correnti di base di -100~\textmu A e -200~\textmu A, calcolati mediante
+    i valori riportati rispettivamente nelle
+    Tabelle~\ref{tab:fit-100uA}~e~\ref{tab:fit-200uA}.
 
     \begin{table}[ht]
         \centering
@@ -115,32 +119,42 @@
             \hline
             \multicolumn{2}{||c||}{Conduttanza di uscita} \\
             \hline
-            $I_B$ (\textnormal{\textmu~A}) & $g$ (1/\textohm)) \\
+            $I_B$ (\textnormal{\textmu~A}) & $b$ (\textohm)) \\
             \hline
-            $(-100\pm...) $                & $...\pm...$       \\
+            $(-100\pm...) $                & $0.935 \pm 0.060$       \\
             \hline
-            $(-200\pm...) $                & $...\pm...$       \\
+            $(-200\pm...) $                & $0.453 \pm 0.029$       \\
             \hline
         \end{tabular}
         \caption{stima della conduttanza di uscita per due diversi valori di correnti di base, con incertezze.
         Per approfondire la valutazione delle incertezze si consulti Appendice ...} % TODO: mettere ref appendice
-        \label{tab:conduttanza}
+        \label{tab:resistenza}
     \end{table}
 
-    Utilizzando i valori di conduttanza (Tabella~\ref{tab:conduttanza}) e le misure effettuate per le correnti di
-    base ... si vuole calcolare il guadagno di corrente,
+    In fine si è calcolato il guadagno di corrente $\beta(V_{CE})$ definito come:
     \begin{equation*}
-        \centering
-        \beta (V_{CE}) = \frac{\varDelta I_C}{\varDelta I_B}
+        \beta(V_{CE}) = \frac{\varDelta I_C(V_{CE})}{\varDelta I_B} = \frac{\varDelta I_C(V_{CE})}{0.1}
     \end{equation*}
 
-    Al fine di garantire una stima più accurata, sono stati valutati i guadagni
-    per diversi valori di tensione $V_{CE}$ e successivamente ne è stata calcolata la media,
-    si riporta in seguito il risultato:
+    % TODO mettere grafico e ref
+    % Immagine del grafico qui
 
-    \begin{align*}
-        \centering
-        \beta = ... \pm ...
-    \end{align*}
+    Tar i punti nel grafico in Figura~... si riporta esplicitamente il valore $\beta(2) = 135.8 \pm  5.6$
+
+%    Utilizzando i valori di conduttanza (Tabella~\ref{tab:conduttanza}) e le misure effettuate per le correnti di
+%    base ... si vuole calcolare il guadagno di corrente,
+%    \begin{equation*}
+%        \centering
+%        \beta (V_{CE}) = \frac{\varDelta I_C}{\varDelta I_B}
+%    \end{equation*}
+%
+%    Al fine di garantire una stima più accurata, sono stati valutati i guadagni
+%    per diversi valori di tensione $V_{CE}$ e successivamente ne è stata calcolata la media,
+%    si riporta in seguito il risultato:
+%
+%    \begin{align*}
+%        \centering
+%        \beta = ... \pm ...
+%    \end{align*}
 
 \end{document}
