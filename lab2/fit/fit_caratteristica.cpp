@@ -9,7 +9,7 @@
 
 void createSingleGraph(const char *source_file, const char *title,
                        const double minX, const double maxX,
-                       const char *output_file) {
+                       const char *output_file, const char color) {
   GraphInitializers allData{};
   GraphInitializers fit{};
   GraphInitializers noFit{};
@@ -36,7 +36,8 @@ void createSingleGraph(const char *source_file, const char *title,
   noFitGraph.SetMarkerSize(1);
 
   fitGraph.SetMarkerColor(kBlue); // Color
-  noFitGraph.SetMarkerColor(kRed);
+  if (color == 'o'){ noFitGraph.SetMarkerColor(kOrange+7);}
+  if (color == 'g'){ noFitGraph.SetMarkerColor(kSpring-1);}
 
   noFitGraph.SetTitle(title); // Title
 
@@ -64,15 +65,13 @@ void createSingleGraph(const char *source_file, const char *title,
 
 int main() {
   setStyle();
-  // FIXME Aggiustare i titoli (così fanno un po' schifo)
   createSingleGraph("../dati_100uA.csv",
                     "Caratteristica I_{C}-V_{EC}, con una corrente di base di "
-                    "-100 #muA;-V_{CE} (V);-I_{C} (mA)",
-                    0.9, 3.3, "fit_100uA.root");
+                    "-100#muA;-V_{CE} (V);-I_{C} (mA)",
+                    0.9, 3.3, "fit_100uA.root", 'o');
 
-  // TODO Testare con Chauvenier se il dato a 1.5 è rigettabile
   createSingleGraph("../dati_200uA.csv",
                     "Caratteristica I_{C}-V_{EC}, con una corrente di base di "
-                    "-200 #muA;-V_{CE} (V);-I_{C} (mA)",
-                    1.02, 3.1, "fit_200uA.root");
+                    "-200#muA;-V_{CE} (V);-I_{C} (mA)",
+                    1.02, 3.1, "fit_200uA.root", 'g');
 }
