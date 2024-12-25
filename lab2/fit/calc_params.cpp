@@ -6,8 +6,8 @@
 #include "TFile.h"
 #include "TGraphErrors.h"
 
+#include <algorithm>
 #include <iostream>
-#include <memory>
 
 #include "data_handling.hpp"
 
@@ -55,7 +55,18 @@ void calcIndividualParams(const char *sourceFile, const char *current) {
   std::cout << std::endl;
 }
 
+double multimeterError(const double measure) {
+  return static_cast<double>(static_cast<int>((measure * 0.01 + 0.03) * 100.)) /
+         100.;
+}
+
 int main() {
+
+  const double err1 = multimeterError(0.1);
+  const double err2 = multimeterError(0.2);
+  std::cout << "Errore su 100 uA:\t" << err1 << std::endl;
+  std::cout << "Errore su 200 uA:\t" << err2 << std::endl << std::endl;
+
   calcIndividualParams("fit_100uA.root", "100");
   calcIndividualParams("fit_200uA.root", "200");
 
@@ -71,14 +82,31 @@ int main() {
                  [](const double a, const double b) { return (-a + b) / 0.1; });
   std::transform(data1.EY.begin(), data1.EY.end(), data2.EY.begin(),
                  data1.EY.begin(),
-                 [](const double a, const double b) { return (a + b) / 0.1; });
+                 [&, i = 0](const double a, const double b) mutable {
+                   const double collectorDifferenceErr = a + b;
+                   const double collectorDifferenceRelErr =
+                       collectorDifferenceErr / (data1.Y[i] * 0.1);
+                   const double baseDifferenceErr = err1 + err2;
+                   const double baseDifferenceRelErr = baseDifferenceErr / 0.1;
+
+                   std::cout << collectorDifferenceRelErr << "\n"
+                             << baseDifferenceRelErr << "\n\n";
+                   const double totalRelErr =
+                       collectorDifferenceRelErr + baseDifferenceRelErr;
+                   const double totalErr = totalRelErr * data1.Y[i];
+
+                   i++;
+                   return totalErr;
+                 });
 
   // Stampo il beta
-  const auto chosenBetaIndex = std::find(data1.X.begin(), data1.X.end(), 2.) - data1.X.begin();
-  std::cout << "beta:\t" << data1.Y[chosenBetaIndex] << "\t+/-\t" << data1.EY[chosenBetaIndex] << std::endl;
+  const auto chosenBetaIndex =
+      std::find(data1.X.begin(), data1.X.end(), 2.) - data1.X.begin();
+  std::cout << "beta:\t" << data1.Y[chosenBetaIndex] << "\t+/-\t"
+            << data1.EY[chosenBetaIndex] << std::endl;
 
   // Creo il grafico dei beta (non che ci serva ma possiamo metterlo)
-  TGraphErrors graph{static_cast<Int_t>(data1.X.size()), data1.X.data(),
-                     data1.Y.data(), data1.EX.data(), data1.EY.data()};
+  const TGraphErrors graph{static_cast<Int_t>(data1.X.size()), data1.X.data(),
+                           data1.Y.data(), data1.EX.data(), data1.EY.data()};
   graph.SaveAs("graph.root");
 }
