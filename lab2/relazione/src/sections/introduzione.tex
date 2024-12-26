@@ -20,7 +20,29 @@
     Ad ogni strato è associato un terminale: quello centrale prende il nome di base,
     quelli esterni sono detti collettore ed emettitore.
     La configurazione ad emettitore comune definisce la base del transistor come
-    terminale di ingresso, mentre il collettore assume il ruolo di terminale di uscita.\\
+    terminale di ingresso, mentre il collettore assume il ruolo di terminale di uscita.
+
+    Secondo le equazioni di Ebers-Moll:
+    \begin{equation}
+        I_C = \beta I_B
+        \label{eq:ebers-moll}
+    \end{equation}
+    la corrente di collettore $I_C$ di BJT ideale nella regione
+    attiva non dipende dalla tensione tra collettore ed
+    emettitore $V_{CE}$ ma solo dal guadagno di corrente $\beta$ e
+    dalla corrente che fluisce nella base $I_B$.
+    Tuttavia in un transistor reale la larghezza della depletion
+    region aumenta al crescere di $V_{CE}$, ciò fa diminuire la
+    larghezza di base e di conseguenza aumentare il $\beta$.
+    Questo fenomeno è noto come \textit{Effetto Early} e trasforma
+    l'Eq.~\eqref{eq:ebers-moll} nella relazione fenomenologica:
+    \begin{equation}
+        I_C(V_{CE}) = \beta I_B \left( 1 + \frac{V_{CE}}{V_A} \right)
+        \label{eq:early}
+    \end{equation}
+    La quale descrive delle rette non più parallele all'asse X,
+    bensì un fascio passante per il punto $(V_A, 0)$.
+
     Ai fini dell'esperimento è importante ricordare che i transistor BJT sono sensibili
     alla temperatura, che tra le altre cose comporta un aumento della
     corrente di collettore pari al 7\% per kelvin; nelle condizioni prese in esame
