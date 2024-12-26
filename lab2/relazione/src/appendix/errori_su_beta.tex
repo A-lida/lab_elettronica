@@ -1,0 +1,33 @@
+%! Author = paolo
+%! Date = 26/12/2024
+
+% Preamble
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{../images}}
+% tutti i pacchetti usati vanno nel main
+
+% Document
+\begin{document}
+
+\section{Calcolo errori sul coefficiente $\beta$}
+  \label{sec:errori-beta}
+  Riprendendo la formula per $\beta$:
+  \begin{equation*}
+    \beta = \frac{\varDelta I_C}{\varDelta I_B}
+  \end{equation*}
+  è immediato vedere che il suo errore relativo sarà pari alla somma
+  di quelli di $\varDelta I_C$ e $\varDelta I_B$.
+  Tra i due è facile convincersi che quello associato a
+  $\varDelta I_B$ sia il dominante una volta calcolato:
+  \begin{equation*}
+    \left\{
+    \begin{array}{@{}l@{}}
+      \Delta_r I_B = \frac{\Delta I_B}{\varDelta I_B} = \frac{\Delta I_{B1} + \Delta I_{B2}}{I_{B_2} - I_{B_1}} \\[1ex]
+      \Delta I_{Bi} = 0.3 \text{ (Si veda l'appendice~\ref{sec:propagazione-errori-misure})}
+    \end{array}\right. \implies
+    \Delta_r I_B = \frac{0.06}{0.1} = 0.06 \cdot 10 = 60\%
+  \end{equation*}
+  Con un errore errore del 60\% già solo su $\varDelta I_B$ è
+  lapalissiano che la misura non possa essere precisa.
+
+\end{document}

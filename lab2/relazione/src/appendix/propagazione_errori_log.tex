@@ -9,35 +9,46 @@
 % Document
 \begin{document}
 
-\section*{Appendice}
-
 \section{Stima delle incertezze sui dati sperimentali}
   \label{sec:propagazione-errori-misure}
+  Nei casi in cui la sensibilità dello strumento lo permetteva, le incertezze associate sono
+  state arrotondate a due cifre significative.
+  \subsection*{Multimetro}
+    Il multimetro digitale utilizzato è il \textit{FLUKE 175}.
+    Con esso sono state effettuate sia misure di corrente che di tensione:
+    \begin{itemize}
+      \item \textbf{Misure di tensione}: Secondo quanto riportato dal costruttore, il multimetro
+      ha una risoluzione di 0.1~mV nel range fino a 600~mV e l'incertezza da associare alla misura
+      è il $0.15\%$ della lettura, addizionato di 0.2~mV;
+      \item \textbf{Misure di corrente}: il costruttore riporta, nel range fino a
+      60~mA, una risoluzione di 0.01~mA e un errore pari all'$1\%$ della
+      lettura più 0.03~mA;
+    \end{itemize}
 
+  \subsection*{Oscilloscopio}
+    \noindent Le misure di tensione sono state acquisite mediante l'ausilio di un oscilloscopio analogico,
+    la formula per calcolare l'incertezza associata è:
+
+    \begin{equation*}
+      \sigma = \sqrt {\left( \sigma_Z + \sigma_L  \right)^2 + \sigma_C^2}
+    \end{equation*}
+
+    \vspace{0.1cm}
+    \noindent Le incertezze sulla lettura ($\sigma_L$) e sullo zero ($\sigma_Z$) sono state considerate dipendenti
+    e valutate mediante la formula:
+    \vspace{0.1cm}
+
+
+    \begin{equation*}
+      \sigma_L = \sigma_Z = \frac{fondo\textnormal{ }scala}{5} \frac{1}{2}
+    \end{equation*}
+
+    \noindent Ove si è aggiunto il fattore moltiplicativo $\frac{1}{2}$ in quanto il segnale risultava
+    essere sufficientemente pulito.\newline\newline
+    \noindent Infine, è stato valutato anche l'errore riportato dal costruttore ($\sigma_C$), pari
+    al 3\% del valore misurato.
 
 \section{Propagazione degli errori nei fit}
   \label{sec:propagazione-errori-log}
-
-
-\section{Calcolo errori sul coefficiente $\beta$}
-  \label{sec:errori-beta}
-  Riprendendo la formula per $\beta$:
-  \begin{equation*}
-    \beta = \frac{\varDelta I_C}{\varDelta I_B}
-  \end{equation*}
-  è immediato vedere che il suo errore relativo sarà pari alla somma
-  di quelli di $\varDelta I_C$ e $\varDelta I_B$.
-  Tra i due è facile convincersi che quello associato a
-  $\varDelta I_B$ sia il dominante una volta calcolato:
-  \begin{equation*}
-    \left\{
-    \begin{array}{@{}l@{}}
-      \Delta_r I_B = \frac{\Delta I_B}{\varDelta I_B} = \frac{\Delta I_{B1} + \Delta I_{B2}}{I_{B_2} - I_{B_1}} \\[1ex]
-      \Delta I_{Bi} = 0.3 \text{ (Si veda l'appendice~\ref{sec:propagazione-errori-misure})}
-    \end{array}\right. \implies
-    \Delta_r I_B = \frac{0.06}{0.1} = 0.06 \cdot 10 = 60\%
-  \end{equation*}
-  Con un errore errore del 60\% già solo su $\varDelta I_B$ è
-  lapalissiano che la misura non possa essere precisa.
 
 \end{document}
