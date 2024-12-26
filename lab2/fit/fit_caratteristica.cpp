@@ -44,7 +44,7 @@ void createSingleGraph(const char *source_file, const char *title,
   // Creo la funzione di fit in modo che mi dia V_A
   TF1 retta("caratteristica", "[0] * ( x - [1])", minX, maxX);
   retta.SetParameters(1, -2);
-  retta.SetParNames("g (mA #upoint mV^{-1})", "V_{A} (mA)");
+  retta.SetParNames("g (mA#upoint V^{-1})", "V_{A} (mA)");
   retta.SetLineColor(kBlue);
 
   // Fitto con il range della funzione

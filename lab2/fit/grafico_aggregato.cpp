@@ -7,6 +7,7 @@
 
 #include "data_handling.hpp"
 #include "graphic_stuff.h"
+#include "TLegend.h"
 
 void createMultiGraph(const std::vector<const char *> &source_files,
                       const char *title, const char *output_file) {
@@ -30,8 +31,12 @@ void createMultiGraph(const std::vector<const char *> &source_files,
     graphs.back().SetMarkerStyle(1);
   }
 
+  auto legend = new TLegend(0.8,0.8,0.9,0.9);
   graphs[0].SetMarkerColor(kOrange+7);
   graphs[1].SetMarkerColor(kSpring-1);
+//  legend->SetHeader("The Legend Title","C"); // option "C" allows to center the header
+  legend->AddEntry("graphs[0]","-100#muA");
+  legend->AddEntry("graph[1]","-200#muA");
 
   graphs[0].SetTitle(title);
 
@@ -39,6 +44,7 @@ void createMultiGraph(const std::vector<const char *> &source_files,
 
   graphs[0].Draw("AP*");
   graphs[1].Draw("SAME P*");
+  legend->Draw();
 
   c.SaveAs(output_file);
 }
@@ -47,6 +53,6 @@ int main() {
   setStyle();
 
   createMultiGraph({"../dati_200uA.csv", "../dati_100uA.csv"},
-                   "Caratteristiche a -100#muA e -200#muA a confronto;-V_{CE} (mV);-I_{C} (mA)",
+                   "Caratteristiche a -100#muA e -200#muA a confronto;-V_{CE} (V);-I_{C} (mA)",
                    "aggregato.root");
 }
