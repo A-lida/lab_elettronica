@@ -5,4 +5,4 @@
 *.idea
 *out
 *auxil
-*cmake-build*
+*cmake-*

@@ -1,0 +1,90 @@
+%! Author = alida
+%! Date = 18/12/2024
+
+% Preamble
+\documentclass[11pt]{article}
+
+% Pacchetti per cose che non sono simboli
+\usepackage{graphicx} % per mettere i prefissi alle path delle immagini nei subfiles
+\usepackage{circuitikz}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[margin=2cm]{geometry}
+\usepackage{microtype} % Sinceramente non ho capito a cosa serva ma dicono sia magico
+
+% Paccheti per simboli
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{listings}
+
+% Pacchetto per includere altri file (da includere per ultimo)
+\usepackage{subfiles}
+
+% Setup dei pacchetti
+\graphicspath{{images}}
+
+\renewcommand{\tablename}{Tabella}
+\renewcommand{\figurename}{Figura}
+
+% Document
+\begin{document}
+
+% \LaTeX
+
+    \title{\textbf{
+        Misura della caratteristica di uscita di un trasistor BJT P-N-P in configurazione
+        a emettitore comune
+    }}
+    \author{Castagnoli Alida, Forni Paolo}
+    \date{22 novembre 2024}
+%DA AGGIUNGERE IL TURNO (CREDO 2) E IL NUMERO DEL TAVOLO (NO IDEA) !!!!!!!!!!!!!!!!!!!!!!!
+    \maketitle
+
+
+    \vspace{-23pt}  % Riduce lo spazio sopra l'abstract
+
+    \begin{abstract}
+        L'esperimento vuole misurare le caratteristica in uscita
+        di un transistor BJT p-n-p, al silicio, in configurazione a
+        emettitore comune, fissando due valori di corrente di base,
+        pari a -100~\textmu A e -200~\textmu A.
+        Successivamente, mediante un fit lineare sui dati acquisiti
+        si vogliono stimare la tensione di Early $V_A$, la
+        resistenza di uscita $b$ e la conduttanza in uscita $g$,
+        inoltre si calcola guadagno di corrente $\beta$ tra le due
+        caratteristiche in corrispondenza di una tensione ($V_{CE}$)
+        di 2 V. \\
+        
+        \noindent Si riportano in seguito i valori misurati, con le relative
+        incertezze:
+        \vspace{0.2cm}
+        \begin{center}
+            \begin{tabular}{llll}
+                \centering
+                -100 \textmu A: & $V_A = (15.2 \pm 1.1)$ V &
+                    $b = (0.935 \pm 0.060)$ $\text{V} \cdot \text{mA}^{-1}$ &
+                    $g = (1.069 \pm 0.069)$ mA$\cdot \text{V}^{-1}$ \\[0.1cm]
+                -200 \textmu A: & $V_A = (12.46 \pm 0.93)$ V &
+                    $b = (0.453 \pm 0.029)$ $\text{V} \cdot \text{mA}^{-1}$ &
+                    $g = (2.21 \pm 0.14)$ mA$\cdot \text{V}^{-1}$
+            \end{tabular} \\[0.3cm]
+            $\beta(V_{CE} = -2 \text{ V}) = 136 \pm  87$
+        \end{center}
+
+    \end{abstract}
+    \subfile{sections/introduzione.tex}
+    \subfile{sections/acquisizione.tex}
+    \clearpage
+    \subfile{sections/analisi.tex}
+    \newpage
+    \subfile{sections/conclusioni.tex}
+    \newpage
+
+    \appendix
+    \section*{Appendice}
+    \subfile{appendix/propagazione_errori_log.tex}
+
+    \subfile{appendix/errori_su_beta.tex}
+
+
+\end{document}

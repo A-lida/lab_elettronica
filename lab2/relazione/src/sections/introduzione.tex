@@ -1,0 +1,74 @@
+%! Author = alida
+%! Date = 18/12/2024
+
+% Preamble
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{../images}}
+
+% tutti i pacchetti usati vanno nel main
+
+% Document
+\begin{document}
+    \section{Introduzione} \label{sec:introduzione}
+
+    L'esperimento prende in esame il comportamento di un transistor a giunzione bipolare,
+    in breve BJT, utilizzato nella configurazione a emettitore comune.
+    Esso è un componente elettronico costituito da tre strati di materiale drogato,
+    un semiconduttore al silicio, in cui lo strato centrale ha drogaggio opposto agli
+    altri due, in modo da formare una doppia giunzione p-n; il transistor
+    utilizzato nell'esperimento presenta una giunzione di tipo p-n-p.
+    Ad ogni strato è associato un terminale: quello centrale prende il nome di base,
+    quelli esterni sono detti collettore ed emettitore.
+    La configurazione ad emettitore comune definisce la base del transistor come
+    terminale di ingresso, mentre il collettore assume il ruolo di terminale di uscita.\\
+
+    La legge che regola il comportamento della corrente di
+    collettore $I_C$ nella regione attiva di un transistor ideale è
+    espressa dall'equazione di Ebers-Moll:
+    \begin{equation}
+        I_C = \beta I_B
+        \label{eq:ebers-moll}
+    \end{equation}
+    Questa mette in luce che la corrente di collettore non dipenda
+    dalla tensione tra collettore ed emettitore $V_{CE}$, ma solo
+    dal guadagno di corrente $\beta$ e dalla corrente che fluisce
+    nella base $I_B$.
+    Tuttavia, in un transistor reale la larghezza della depletion
+    region aumenta al crescere di $V_{CE}$, ciò fa diminuire la
+    larghezza della base e di conseguenza aumentare il $\beta$.
+    Questo fenomeno è noto come \textit{Effetto Early} e trasforma
+    l'Eq.~\eqref{eq:ebers-moll} nella relazione fenomenologica:
+    \begin{equation}
+        I_C(V_{CE}) = \beta I_B \left( 1 + \frac{V_{CE}}{V_A} \right)
+        \label{eq:early}
+    \end{equation}
+    La quale descrive delle rette non più parallele all'asse X,
+    bensì un fascio passante per il punto $(V_A, 0)$, dove $V_A$
+    è detta tensione di Early.\\
+
+    Ai fini dell'esperimento è importante ricordare che il
+    comportamento di un BJT è sensibile alle variazioni di
+    temperatura.
+    In particolare, comporta un aumento della corrente di collettore
+    e di $\beta$ rispettivamente del 7\% e di un'unità per kelvin,
+    questo fenomeno è detto \textit{fuga termica}; l'ordine di
+    grandezza delle correnti in gioco, rende non trascurabile
+    l'effetto Joule, sono state quindi adottate delle contromisure
+    per ridurne l'impatto.\\
+
+    Il fine dell'esperimento è quello di misurare la caratteristica in uscita del BJT,
+    ovvero l'andamento della corrente di collettore ($I_C$) in funzione della tensione
+    tra collettore ed emettitore ($V_{CE}$) per due differenti correnti di base ($I_B$). \\
+    Si vuole quindi calcolare la tensione di Early $V_A$, la resistenza $b$ e la
+    conduttanza $g$ definite come:
+    \begin{equation}
+        b^{-1} = g = \frac{\varDelta I_C}{\varDelta V_{CE}}
+        \label{eq:g/b}
+    \end{equation}
+    Infine si vuole calcolare il guadagno di corrente del transistor
+    $\beta$, per un valore fissato di $V_{CE}$ nella regione attiva.
+
+%    TODO: un caratteristica per ogni corrente di base scelta, effetto joule fa shiftare la caratteristica
+
+
+\end{document}

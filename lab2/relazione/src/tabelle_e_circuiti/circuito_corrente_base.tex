@@ -1,0 +1,35 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\centering
+\begin{circuitikz}
+  \draw (2.9,2.2) node[smetershape, rotated instruments, t=A](A){};
+  \draw
+  (-1.7,0) to[battery1]
+  (-1.7,3.2) --
+  (0,3.2) to[american potentiometer, name=p1, a=1 k\textohm]
+  (0,0) --
+  (-1.7, 0)
+  (-1.7,0) --
+  (4,0) to[american potentiometer, name=p2, a=100 k\textohm]
+  (4,3.2) --
+  (0,3.2);
+  \draw
+  (p2.wiper) --
+  (p2.wiper -| A.in 2) to[short, -*]
+  (A.in 2);
+  \draw
+  (A.in 1) to[short, *-]
+  (A.in 1 |- p2.wiper) --
+  ++(-0.5, 0) node[pnp, xscale=-0.8, yscale=-0.8, tr circle, anchor=west](T) {};
+  \draw
+  (T.C) --
+  (T.C -| 1,2) --
+  (1,2 |- p1.wiper)--
+  (p1.wiper);
+  \draw
+  (T.E) --
+  (T.E |- 0,0)
+  (-1.7,0) node[ground] {}
+  ;
+\end{circuitikz}
+\end{document}
