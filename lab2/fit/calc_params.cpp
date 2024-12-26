@@ -107,7 +107,8 @@ int main() {
   // Creo il grafico dei beta (non che ci serva ma possiamo metterlo)
   TGraphErrors graph{static_cast<Int_t>(data1.X.size()), data1.X.data(),
                      data1.Y.data(), data1.EX.data(), data1.EY.data()};
-  graph.SetTitle("Guadagno di corrente tra 100 e 200 #muA;V_{CE} (V);#beta");
+  graph.SetTitle("Guadagno di corrente tra le caratteristiche a -100 e -200 "
+                 "#muA;-V_{CE} (V);#beta");
   TCanvas c{"", "", 1500, 1000};
 
   graph.Draw();

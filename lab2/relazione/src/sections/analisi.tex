@@ -17,7 +17,7 @@
         Tabelle~\ref{tab:100uA}~e~\ref{tab:200uA}.
         Per la precisione, al fine di ricavare i parametri
         desiderati direttamente dal fit, questo è stato eseguito
-        secondo la funzione
+        con la funzione
         \begin{equation*}
             y = g \cdot ( x - V_A)
         \end{equation*}
@@ -30,7 +30,7 @@
             \caption{
                 Grafico della caratteristica $I_C - V_{CE}$ ad assi
                 invertiti e fit della regione attiva, con una
-                corrente di base pari a 100 \textmu A.
+                corrente di base pari a $-100$ \textmu A.
             }
             \label{fig:fit-100}
         \end{figure}
@@ -40,14 +40,14 @@
             \caption{
                 Grafico della caratteristica $I_C - V_{CE}$ ad assi
                 invertiti e fit della regione attiva, con una
-                corrente di base pari a 200 \textmu A.
+                corrente di base pari a $-200$ \textmu A.
             }
             \label{fig:fit-200}
         \end{figure}
-        I risultati dei fit raffigurati nelle
+        I risultati dei fit riportati nelle
         Figure~\ref{fig:fit-100}~e~\ref{fig:fit-200} e il valore
-        della resistenza in uscita $b$ calcolato con essi secondo
-        l'Eq.\,\eqref{eq:g/b} sono rispettivamente:
+        della resistenza in uscita $b$ calcolato a partire da essi secondo
+        l'Eq.\,\eqref{eq:g/b}, sono rispettivamente:
 
     \begin{table}[ht]
         \centering
@@ -64,7 +64,7 @@
                 \rule{0pt}{3ex} $b$ (\textohm) & $0.935 \pm 0.060$ \\[1ex]
                 \hline
             \end{tabular}
-            \caption{-100}
+            \caption{-100 \textmu A}
             \label{tab:fit-100uA}
         \end{subtable}
         \hfill
@@ -81,7 +81,7 @@
                 \rule{0pt}{3ex} $b$ (\textohm) & $0.453 \pm 0.029$ \\[1ex]
                 \hline
             \end{tabular}
-            \caption{-200 \textmu A.}
+            \caption{-200 \textmu A}
             \label{tab:fit-200uA}
         \end{subtable}
 
@@ -94,7 +94,7 @@
 
     \end{table}
 
-    In fine si è calcolato il guadagno di corrente $\beta(V_{CE})$ definito come:
+    \noindent Infine si è calcolato il guadagno di corrente $\beta(V_{CE})$ definito come:
     \begin{equation*}
         \beta(V_{CE}) = \frac{\varDelta I_C(V_{CE})}{\varDelta I_B} = \frac{\varDelta I_C(V_{CE})}{0.1}
     \end{equation*}
@@ -103,15 +103,18 @@
         \centering
         \includegraphics[width=0.7\textwidth]{../../images/beta}
         \caption{
-            Grafico del guadagno di corrente $\beta$ in funzione di
-            $V_{CE}$, tra i valori 100 e 200 \textmu A di $I_B$.
+            Grafico del guadagno di corrente $\beta$ tra le
+            caratteristiche a -100~\textmu A e -200~\textmu A, in
+            funzione di $V_{CE}$.
         }
         \label{fig:beta}
     \end{figure}
-    È immediato notare l'entità degli errori sui valori di $\beta$
+    \noindent È immediato notare l'entità degli errori sui valori di $\beta$
     riportati nel grafico in Figura~\ref{fig:beta}, per la
     spiegazione si veda l'appendice~\ref{sec:errori-beta}.
-    Tra i punti nel grafico si riporta esplicitamente il valore
-    $\beta(2) = 135 \pm  87$
+    Tra i punti nel grafico si riporta esplicitamente il valore:
+    \begin{center}
+        $\beta(-2) = 135 \pm  87$
+    \end{center}
 
 \end{document}
