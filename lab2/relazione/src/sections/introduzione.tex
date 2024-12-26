@@ -51,9 +51,14 @@
 
     Il fine dell'esperimento è quello di misurare la caratteristica in uscita del BJT,
     ovvero l'andamento della corrente di collettore ($I_C$) in funzione della tensione
-    tra collettore ed emettitore ($V_{CE}$) per due differenti correnti di base ($I_B$).
+    tra collettore ed emettitore ($V_{CE}$) per due differenti correnti di base ($I_B$). \\
     Si vuole quindi calcolare la tensione di early $V_A$, la resistenza $b$ e la
-    conduttanza $g$, infine si vuole calcolare il guadagno di corrente del transistor
+    conduttanza $g$ definite come:
+    \begin{equation}
+        b^{-1} = g = \frac{\varDelta I_C}{\varDelta V_{CE}}
+        \label{eq:g/b}
+    \end{equation}
+    Infine si vuole calcolare il guadagno di corrente del transistor
     $\beta$, per un valore fissato di $V_{CE}$ nella regione attiva.
 
 %    TODO: un caratteristica per ogni corrente di base scelta, effetto joule fa shiftare la caratteristica

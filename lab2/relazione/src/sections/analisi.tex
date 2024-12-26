@@ -45,8 +45,9 @@
             \label{fig:fit-200}
         \end{figure}
         I risultati dei fit raffigurati nelle
-        Figure~\ref{fig:fit-100}~e~\ref{fig:fit-200} sulle due
-        caratteristiche sono rispettivamente:
+        Figure~\ref{fig:fit-100}~e~\ref{fig:fit-200} e il valore
+        della resistenza in uscita $b$ calcolato con essi secondo
+        l'Eq.\,\eqref{eq:g/b} sono rispettivamente:
 
     \begin{table}[ht]
         \centering
@@ -56,9 +57,11 @@
                 \hline
                 \multicolumn{2}{||c||}{Corrente di base di -100~\textmu A} \\
                 \hline
-                \rule{0pt}{3ex} $V_A$ (V) & $g$ (\textohm$^{-1}$) \\[1ex]
+                \rule{0pt}{3ex} $V_A$ (V) & $15.2 \pm 1.1$ \\[1ex]
                 \hline
-                $15.2 \pm 1.1$    & $1.069 \pm 0.069$                                   \\
+                \rule{0pt}{3ex} $g$ (\textohm$^{-1}$) & $1.069 \pm 0.069$ \\[1ex]
+                \hline
+                \rule{0pt}{3ex} $b$ (\textohm) & $0.935 \pm 0.060$ \\[1ex]
                 \hline
             \end{tabular}
             \caption{-100}
@@ -68,14 +71,14 @@
         \begin{subtable}[t]{.45\textwidth}
             \centering
             \begin{tabular}{||c|c||}
-
                 \hline
                 \multicolumn{2}{||c||}{Corrente di base di -200~\textmu A} \\
                 \hline
-
-                \rule{0pt}{3ex} $V_A$ (V) & $g$ (\textohm$^{-1}$) \\ [1ex]
+                \rule{0pt}{3ex} $V_A$ (V) & $12.46 \pm 0.93 $ \\[1ex]
                 \hline
-                $12.46 \pm 0.93 $           & $2.21 \pm 0.14$                                          \\
+                \rule{0pt}{3ex} $g$ (\textohm$^{-1}$) & $2.21 \pm 0.14$ \\[1ex]
+                \hline
+                \rule{0pt}{3ex} $b$ (\textohm) & $0.453 \pm 0.029$ \\[1ex]
                 \hline
             \end{tabular}
             \caption{-200 \textmu A.}
@@ -85,72 +88,10 @@
         \vspace{0.5pt} % Spazio opzionale tra minipage e caption generale
 
         \caption{Risultati dei fit lineari effettuati sulle misure delle caratteristiche in uscita del transistor BJT,
-            corrispondenti a una corrente di base di (a) -100\;\textmu A, (b) -200\;\textmu A.}
+            corrispondenti a una corrente di base di (a) -100\;\textmu A, (b) -200\;\textmu A, e valori della
+            resistenza calcolati a partire da essi.}
         \label{tab:fit_caratteristiche}
 
-    \end{table}
-    % TODO: capire quanle tabella ti piace di più
-%    \begin{table}[ht]
-%        \centering
-%        \begin{tabular}{||c|c||}
-%            \hline
-%            \multicolumn{2}{||c||}{Corrente di base di -100\;\textmu A} \\
-%            \hline
-%            $V_A$ (\textnormal{A}) & $\varDelta V_{CE} / \varDelta I_C$ (\textohm) \\
-%            \hline
-%            $(...\pm...)\cdot $    & $...\pm...$                                   \\
-%            \hline
-%        \end{tabular}
-%        \caption{Risultati dei fit lineari effettuati sulle misure delle caratteristiche in uscita del transistor BJT,
-%            corrispondente a una corrente di base di -100\;\textmu A.}
-%        \label{tab:fit-100uA}
-%    \end{table}
-
-%    \begin{table}[ht]
-%        \centering
-%        \begin{tabular}{||c|c||}
-%            \hline
-%            \multicolumn{2}{||c||}{Corrente di base di -200\;\textmu A} \\
-%            \hline
-%            $V_A$ (\textnormal{V}) & $\eta \varDelta V_{CE} / \varDelta I_C$ (\textohm)) \\
-%            \hline
-%            $(...\pm...)\cdot $    & $...\pm...$                                         \\
-%            \hline
-%        \end{tabular}
-%        \caption{Risultati dei fit lineari effettuati sulle misure delle caratteristiche in uscita del transistor BJT,
-%            corrispondente a una corrente di base di -200\;\textmu A.}
-%        \label{tab:fit-200uA}
-%    \end{table}
-
-    I valori ottenuti dai fit sono stati utilizzati per calcolare
-    il valore della resistenza in uscita $b$
-
-    \begin{equation*}
-        b = \frac{\varDelta V_{CE}}{\varDelta I_C} =
-        \left( \frac{\varDelta I_C}{\varDelta V_{CE}} \right)^{-1} = g^{-1}
-    \end{equation*}
-
-    Si riportano tabulati in seguito i le stime dei valori di resistenza
-    per correnti di base di -100~\textmu A e -200~\textmu A, calcolati mediante
-    i valori riportati rispettivamente nelle
-    Tabelle~\ref{tab:fit-100uA}~e~\ref{tab:fit-200uA}.
-
-    \begin{table}[ht]
-        \centering
-        \begin{tabular}{||c|c||}
-            \hline
-            \multicolumn{2}{||c||}{Conduttanza di uscita} \\
-            \hline
-            $I_B$ (\textnormal{\textmu~A}) & $b$ (\textohm)) \\
-            \hline
-            $(-100\pm...) $                & $0.935 \pm 0.060$       \\
-            \hline
-            $(-200\pm...) $                & $0.453 \pm 0.029$       \\
-            \hline
-        \end{tabular}
-        \caption{stima della conduttanza di uscita per due diversi valori di correnti di base, con incertezze.
-        Per approfondire la valutazione delle incertezze si consulti Appendice ...} % TODO: mettere ref appendice
-        \label{tab:resistenza}
     \end{table}
 
     In fine si è calcolato il guadagno di corrente $\beta(V_{CE})$ definito come:
@@ -172,20 +113,5 @@
     spiegazione si veda l'appendice~... .
     Tar i punti nel grafico si riporta esplicitamente il valore $\beta(2) = 135 \pm  87$
 
-%    Utilizzando i valori di conduttanza (Tabella~\ref{tab:conduttanza}) e le misure effettuate per le correnti di
-%    base ... si vuole calcolare il guadagno di corrente,
-%    \begin{equation*}
-%        \centering
-%        \beta (V_{CE}) = \frac{\varDelta I_C}{\varDelta I_B}
-%    \end{equation*}
-%
-%    Al fine di garantire una stima più accurata, sono stati valutati i guadagni
-%    per diversi valori di tensione $V_{CE}$ e successivamente ne è stata calcolata la media,
-%    si riporta in seguito il risultato:
-%
-%    \begin{align*}
-%        \centering
-%        \beta = ... \pm ...
-%    \end{align*}
 
 \end{document}
