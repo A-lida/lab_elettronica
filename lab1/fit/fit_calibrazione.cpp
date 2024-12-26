@@ -40,7 +40,7 @@ int main() {
   TF1 retta("retta", "[0] * x + [1]", 0, 810);
   retta.SetParameters(1, 1);
   retta.SetLineColor(kGreen);
-  retta.SetParNames("Slope", "Offset");
+  retta.SetParNames("Slope", "Offset (mV)");
 
   cutifier(c.GetPad(1));
   graph.SetMarkerStyle(1);

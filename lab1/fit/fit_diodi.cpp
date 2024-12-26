@@ -47,7 +47,7 @@ void create_graphs(const char *source_file, const char *title1, const char *titl
 
   TF1 exp("esponenziale", "[0]*exp(x/[1])");
   exp.SetParameters(1E-6, 355. / 6);
-  exp.SetParNames("I_{0}", "#eta V_{T}");
+  exp.SetParNames("I_{0} (mA)", "#eta V_{T} (mV)");
   exp.SetLineColor(kOrange);
 
   graph.SetMarkerSize(1);
@@ -73,7 +73,7 @@ void create_graphs(const char *source_file, const char *title1, const char *titl
 
   TF1 retta("caratteristica", "[0]+ x/ [1]");
   retta.SetParameters(-3, 1. / 50);
-  retta.SetParNames("ln(I_{0})", "#eta V_{T}");
+  retta.SetParNames("ln(I_{0})", "#eta V_{T} (mV)");
   retta.SetLineColor(kBlue);
   graph_log.SetTitle(title2);
   graph_log.SetMarkerStyle(1);
