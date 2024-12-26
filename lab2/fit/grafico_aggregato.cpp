@@ -4,10 +4,12 @@
 
 #include "TCanvas.h"
 #include "TGraphErrors.h"
+#include "TLegend.h"
+
+#include <string>
 
 #include "data_handling.hpp"
 #include "graphic_stuff.h"
-#include "TLegend.h"
 
 void createMultiGraph(const std::vector<const char *> &source_files,
                       const char *title, const char *output_file) {
@@ -31,12 +33,11 @@ void createMultiGraph(const std::vector<const char *> &source_files,
     graphs.back().SetMarkerStyle(1);
   }
 
-  auto legend = new TLegend(0.8,0.8,0.9,0.9);
+  TLegend legend{0.8,0.2,0.9,0.1};
   graphs[0].SetMarkerColor(kOrange+7);
   graphs[1].SetMarkerColor(kSpring-1);
-//  legend->SetHeader("The Legend Title","C"); // option "C" allows to center the header
-  legend->AddEntry("graphs[0]","-100#muA");
-  legend->AddEntry("graph[1]","-200#muA");
+  legend.AddEntry(&graphs[0],"-200#muA");
+  legend.AddEntry(&graphs[1],"-100#muA");
 
   graphs[0].SetTitle(title);
 
@@ -44,7 +45,7 @@ void createMultiGraph(const std::vector<const char *> &source_files,
 
   graphs[0].Draw("AP*");
   graphs[1].Draw("SAME P*");
-  legend->Draw();
+  legend.Draw();
 
   c.SaveAs(output_file);
 }
