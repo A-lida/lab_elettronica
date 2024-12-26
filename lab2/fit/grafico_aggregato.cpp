@@ -34,8 +34,8 @@ void createMultiGraph(const std::vector<const char *> &source_files,
   }
 
   TLegend legend{0.8,0.2,0.9,0.1};
-  graphs[0].SetMarkerColor(kOrange+7);
-  graphs[1].SetMarkerColor(kSpring-1);
+  graphs[0].SetMarkerColor(kSpring-1);
+  graphs[1].SetMarkerColor(kOrange+7);
   legend.AddEntry(&graphs[0],"-200#muA");
   legend.AddEntry(&graphs[1],"-100#muA");
 
